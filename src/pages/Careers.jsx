@@ -79,7 +79,7 @@ export default function Careers() {
         <div className="modal-backdrop" onClick={handleClose}>
           <div className="careers-modal glass-panel" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={handleClose}>
-              <X size={20} />
+              <X size={24} />
             </button>
             <h2>{t('careers.modal.title')}</h2>
             <p className="modal-job-sub">{locale === 'en' ? 'Position: ' : 'الوظيفة: '}<span className="text-gradient font-bold">{activeJob}</span></p>
