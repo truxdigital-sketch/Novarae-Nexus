@@ -18,7 +18,12 @@ import {
   ArrowLeft,
   CheckCircle,
   PhoneCall,
-  Calendar
+  Calendar,
+  Tv,
+  Play,
+  Film,
+  Award,
+  Users
 } from 'lucide-react';
 import './Pages.css';
 
@@ -45,7 +50,13 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
     { id: 'videography', icon: <Video size={24} /> },
     { id: 'content-creation', icon: <PenTool size={24} /> },
     { id: 'email-marketing', icon: <Mail size={24} /> },
-    { id: 'strategy-consulting', icon: <Compass size={24} /> }
+    { id: 'strategy-consulting', icon: <Compass size={24} /> },
+    { id: 'event-photography', icon: <Camera size={24} /> },
+    { id: 'event-videography', icon: <Video size={24} /> },
+    { id: 'interview-videography', icon: <Users size={24} /> },
+    { id: 'social-media-reels', icon: <Play size={24} /> },
+    { id: 'highlight-videos', icon: <Film size={24} /> },
+    { id: 'group-award-photography', icon: <Award size={24} /> }
   ];
 
   const handleSelectService = (id) => {

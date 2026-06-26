@@ -37,7 +37,9 @@ export default function Home({ setCurrentPage }) {
     { id: 'meta-ads', key: 'meta-ads' },
     { id: 'google-ads', key: 'google-ads' },
     { id: 'seo', key: 'seo' },
-    { id: 'web-design', key: 'web-design' }
+    { id: 'web-design', key: 'web-design' },
+    { id: 'event-photography', key: 'event-photography' },
+    { id: 'event-videography', key: 'event-videography' }
   ];
 
   const chooseItems = [

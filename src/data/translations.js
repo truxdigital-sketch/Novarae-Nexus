@@ -162,6 +162,48 @@ export const translations = {
           longDesc: "A map to dominate your sector. We analyze your competitors, audit your current digital channels, define specific growth KPIs, and deliver a comprehensive marketing roadmap designed for the UAE market.",
           features: ["Competitor Gap Analysis", "Growth Roadmap Architecture", "KPI & Dashboard Frameworks", "C-Suite Advisory Consulting"],
           stat: "Data-Driven Focus"
+        },
+        "event-photography": {
+          title: "Event Photography",
+          shortDesc: "Professional event coverage capturing every important moment with high-quality edited images.",
+          longDesc: "Deliver premium visual coverage for your corporate conferences, high-end galas, product launches, and brand activations. Our professional photography team operates with state-of-the-art gear to document key milestones, speaker sessions, and candid attendee moments, delivering fully color-graded, high-resolution imagery.",
+          features: ["High-End Corporate Coverage", "Same-Day Image Delivery", "Professional Retouching", "Online Shareable Gallery"],
+          stat: "48hr Delivery"
+        },
+        "event-videography": {
+          title: "Event Videography",
+          shortDesc: "Cinematic event coverage with professional editing and storytelling.",
+          longDesc: "Capture the energy and scale of your corporate events with cinematic video production. We craft engaging brand recaps, multi-camera conference recordings, and speaker highlights that amplify your message and provide high-value marketing assets for future campaigns.",
+          features: ["Cinematic 4K Recording", "Multi-Camera Setup", "Professional Sound Design", "Post-Event Highlights"],
+          stat: "Cinematic 4K"
+        },
+        "interview-videography": {
+          title: "Interview & Testimonial Videos",
+          shortDesc: "Professionally filmed client interviews, testimonials, and corporate interviews that build trust and credibility.",
+          longDesc: "Leverage the power of social proof with high-production client testimonials. We handle the entire process—from scripting questions and interview coaching to premium lighting, multi-cam recording, and editing—producing authentic stories that drive sales.",
+          features: ["Executive Interview Coaching", "Premium Studio Lighting", "Dynamic Sound & B-Roll", "Persuasive Story Arc"],
+          stat: "Boost Trust by 85%"
+        },
+        "social-media-reels": {
+          title: "Social Media Reels",
+          shortDesc: "Short-form, engaging vertical videos optimized for Instagram, Facebook, TikTok, and YouTube Shorts.",
+          longDesc: "Capture attention in seconds. We produce scroll-stopping, high-retention vertical videos styled for Instagram Reels, TikTok, and YouTube Shorts. Our team handles trending audio sync, custom captions, dynamic editing, and visual hooks.",
+          features: ["9:16 Mobile Optimization", "Trending Audio Alignment", "Engaging Subtitles & Hooks", "Rapid Content Production"],
+          stat: "10x Reach Potential"
+        },
+        "highlight-videos": {
+          title: "Highlight Videos",
+          shortDesc: "Dynamic recap videos showcasing the best moments from events, conferences, launches, and celebrations.",
+          longDesc: "Turn your multi-day conferences or exclusive galas into a fast-paced, high-energy highlight reel. We condense the essence of your activation into an engaging 60-second summary video perfect for sharing with stakeholders and social media followers.",
+          features: ["High-Energy Soundtracks", "Dynamic Visual Transitions", "Event Essence Capture", "Social Media Prepped"],
+          stat: "60s Brand Recaps"
+        },
+        "group-award-photography": {
+          title: "Group & Award Photography",
+          shortDesc: "Professional coverage of team photos, award presentations, stage moments, and official group portraits.",
+          longDesc: "Document excellence with precision. We capture prestigious corporate awards, stage handshakes, team group portraits, and executive lineup photography. We ensure perfect lighting, coordination, and rapid delivery for PR and internal communications.",
+          features: ["Stage Presentation Timing", "Large Group Coordination", "Perfect Lighting Balance", "PR & Press Ready Assets"],
+          stat: "PR & Press Ready"
         }
       }
     },
@@ -247,54 +289,87 @@ export const translations = {
       subtitle: "A showcase of high-end campaigns, digital platforms, and brand identities across the UAE.",
       all: "All Projects",
       categories: {
-        web: "Web & E-com",
-        branding: "Branding",
-        social: "Social Media",
-        ads: "Advertising",
-        media: "Photo & Video"
+        "event-photo": "Event Photography",
+        "event-video": "Event Videography",
+        "interview": "Interview & Testimonial",
+        "reels": "Social Media Reels",
+        "highlights": "Highlight Videos",
+        "group-photo": "Group Photography",
+        "awards": "Award Ceremony",
+        "corporate-events": "Corporate Events",
+        "product-photo": "Product Photography",
+        "brand-content": "Brand Content"
       },
       items: [
         {
-          title: "Luxury Real Estate Platform",
-          client: "Al Hamra Realty",
-          category: "web",
-          desc: "Bespoke interactive portal with immersive 3D listings and high-end leads.",
-          image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+          title: "GCC Tech Summit Coverage",
+          client: "DTEC Dubai",
+          category: "event-photo",
+          desc: "Professional event coverage capturing every speaker and panelist session.",
+          image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "Bespoke Fine Dining Rebrand",
-          client: "Mina Restaurant",
-          category: "branding",
-          desc: "Complete visual identity, premium logo, and luxury menus for a Dubai Marina spot.",
-          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+          title: "Luxury Yacht Launch Film",
+          client: "Gulf Craft",
+          category: "event-video",
+          desc: "Cinematic promotional launch video with professional editing and drone coverage.",
+          image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "Meta Lead Gen Campaign",
-          client: "Elite Wellness Clinic",
-          category: "ads",
-          desc: "Precision targeted Facebook & Instagram ads netting a 5.2x increase in bookings.",
-          image: "https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&w=800&q=80"
+          title: "Executive Trust Testimonials",
+          client: "Vanguard Capital",
+          category: "interview",
+          desc: "Professionally filmed client interviews highlighting multi-million dollar portfolios.",
+          image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "Aesthetic Lifestyle Campaign",
+          title: "Aesthetic Lifestyle Reels",
           client: "Nura Cosmetics",
-          category: "media",
-          desc: "Studio product photography and cinematic Reels highlighting premium organic lipsticks.",
+          category: "reels",
+          desc: "Engaging vertical videos optimized for Instagram, TikTok, and YouTube Shorts.",
           image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "Premium E-commerce Portal",
-          client: "Zabeel Jewelry",
-          category: "web",
-          desc: "Custom headless Shopify architecture integrated with Tamara and Apple Pay.",
-          image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+          title: "Formula 1 Grand Prix Recap",
+          client: "Yas Marina Circuit",
+          category: "highlights",
+          desc: "Dynamic recap video showcasing the best high-speed moments on and off track.",
+          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "Social Growth Strategy",
-          client: "Hyperion Automotive",
-          category: "social",
-          desc: "Bespoke creative design and reels driving 50k+ local followers in 90 days.",
-          image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80"
+          title: "Corporate Team & Board Portraits",
+          client: "Emaar Properties",
+          category: "group-photo",
+          desc: "Professional executive group portraits for the annual financial report.",
+          image: "https://images.unsplash.com/photo-1556761175-b813d53a362e?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "UAE Business Excellence Awards",
+          client: "Dubai Chamber",
+          category: "awards",
+          desc: "Professional stage award presentations and official group VIP portraits.",
+          image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Annual Leadership Forum",
+          client: "Adnoc Group",
+          category: "corporate-events",
+          desc: "Bespoke media coverage for ADNOC's global executive leadership retreat.",
+          image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Premium Perfume Bottle Stills",
+          client: "Oud Royale Dubai",
+          category: "product-photo",
+          desc: "Luxury studio product photography for high-end Arabian perfume bottles.",
+          image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Social Media Identity Campaign",
+          client: "Residences Marina",
+          category: "brand-content",
+          desc: "Curated lifestyle content and campaign creation for luxury marina-front living.",
+          image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
         }
       ]
     },
@@ -680,6 +755,48 @@ export const translations = {
           longDesc: "خارطة طريق واضحة للسيطرة على قطاعك. نقوم بتحليل منافسيك، وتدقيق قنواتك الرقمية الحالية، وتحديد مؤشرات الأداء الرئيسية KPIs وتوفير خطة شاملة ومدروسة تناسب السوق الإماراتي.",
           features: ["تحليل الفجوات وفرص المنافسين", "بناء وتطوير خارطة طريق النمو", "إعداد مؤشرات الأداء ولوحات المتابعة", "استشارات استراتيجية للمدراء التنفيذيين"],
           stat: "تركيز قائم على البيانات"
+        },
+        "event-photography": {
+          title: "التصوير الفوتوغرافي للفعاليات",
+          shortDesc: "تغطية احترافية للفعاليات تلتقط كل اللحظات الهامة بلقطات وصور عالية الجودة.",
+          longDesc: "تغطية بصرية متميزة للمؤتمرات والندوات وحفلات الإطلاق والفعاليات الكبرى. يلتقط فريقنا الاحترافي أدق تفاصيل الحدث وأبرز الحضور، لتقديم صور معدلة بدقة بالغة ومصححة الألوان.",
+          features: ["تغطية المؤتمرات والفعاليات", "تسليم سريع للصور", "تعديل وتحرير احترافي", "معرض صور رقمي للمشاركة"],
+          stat: "تسليم خلال 48 ساعة"
+        },
+        "event-videography": {
+          title: "تصوير الفيديو للفعاليات",
+          shortDesc: "تغطية سينمائية شاملة للفعاليات مع مونتاج وسرد قصصي احترافي.",
+          longDesc: "جسّد حجم وأهمية فعالياتك التجارية بفيديو سينمائي مذهل. نصمم فيديوهات تلخص الفعالية، ونسجل الجلسات بكاميرات متعددة، مع إبراز كلمات المتحدثين لتكون أصولاً تسويقية قوية.",
+          features: ["تصوير سينمائي بدقة 4K", "إعداد كاميرات متعددة", "هندسة صوتية احترافية", "فيديو ملخص بعد الفعالية"],
+          stat: "دقة سينمائية 4K"
+        },
+        "interview-videography": {
+          title: "فيديوهات المقابلات وآراء العملاء",
+          shortDesc: "تصوير احترافي لمقابلات العملاء وشهاداتهم لبناء المصداقية والثقة.",
+          longDesc: "استغل قوة التقييمات وآراء العملاء بفيديوهات مصورة باحترافية عالية. نتولى العملية بأكملها: صياغة الأسئلة، تهيئة الإضاءة، التصوير بكاميرات متعددة، وإضافة لقطات B-roll لقصص تلهم عملائك.",
+          features: ["توجيه وتدريب المتحدثين", "إضاءة استوديو فاخرة", "صوت ديناميكي ولقطات مساعدة", "بناء سردي مقنع للقصة"],
+          stat: "زيادة الثقة بنسبة 85%"
+        },
+        "social-media-reels": {
+          title: "فيديوهات الريلز للشبكات الاجتماعية",
+          shortDesc: "مقاطع فيديو رأسية قصيرة وجذابة مهيأة لإنستغرام وتيك توك ويوتيوب شورتس.",
+          longDesc: "اجذب الانتباه خلال ثوانٍ معدودة. ننتج مقاطع فيديو رأسية مخصصة للريلز وتيك توك ويوتيوب بمعدل احتفاظ مرتفع بالجمهور، مع دمج المقاطع الموسيقية الرائجة، النصوص التفاعلية والمؤثرات البصرية الجذابة.",
+          features: ["منظور رأسي للهواتف 9:16", "مزامنة الموسيقى الرائجة", "نصوص توضيحية وعناوين جذابة", "إنتاج محتوى سريع ودوري"],
+          stat: "توسيع نطاق الوصول 10 أضعاف"
+        },
+        "highlight-videos": {
+          title: "فيديوهات ملخصة وتسليط الضوء",
+          shortDesc: "مقاطع فيديو ديناميكية تلخص أفضل اللحظات في المؤتمرات والفعاليات والاحتفالات.",
+          longDesc: "حول فعاليتك أو مؤتمرك الممتد لأيام إلى فيديو ملخص سريع ومفعم بالحيوية. نلخص جوهر الفعالية في مقطع مدته 60 ثانية مثالي لمشاركته مع المستثمرين والمتابعين على منصات التواصل.",
+          features: ["موسيقى تصويرية حيوية", "انتقالات بصرية ديناميكية", "التقاط جوهر الفعالية بدقة", "جاهز للمشاركة الفورية"],
+          stat: "ملخص فعاليات 60 ثانية"
+        },
+        "group-award-photography": {
+          title: "التصوير الجماعي وحفلات الجوائز",
+          shortDesc: "تغطية احترافية لصور فرق العمل، تسليم الجوائز، ولحظات التكريم الرسمية.",
+          longDesc: "توثيق التميز بدقة ومهنية. نلتقط صور تسليم الجوائز على المسرح، وصور المجموعات الرسمية للمدراء والموظفين، مع ضمان إضاءة مثالية وتسليم سريع للاستخدام في العلاقات العامة PR.",
+          features: ["توقيت مثالي للتصوير على المسرح", "تنسيق وتوجيه المجموعات الكبيرة", "توازن مثالي في الإضاءة", "أصول جاهزة للنشر الصحفي"],
+          stat: "جاهز للنشر الصحفي"
         }
       }
     },
@@ -765,54 +882,87 @@ export const translations = {
       subtitle: "معرض يعرض حملات إعلانية متكاملة، منصات ويب فاخرة، وهويات تجارية متميزة في الإمارات.",
       all: "جميع المشاريع",
       categories: {
-        web: "المواقع والمتاجر",
-        branding: "الهوية التجارية",
-        social: "شبكات التواصل",
-        ads: "الحملات الإعلانية",
-        media: "الصور والفيديو"
+        "event-photo": "التصوير الفوتوغرافي للفعاليات",
+        "event-video": "تصوير الفيديو للفعاليات",
+        "interview": "المقابلات وآراء العملاء",
+        "reels": "فيديوهات الريلز القصيرة",
+        "highlights": "الفيديوهات الملخصة",
+        "group-photo": "التصوير الجماعي",
+        "awards": "حفلات التكريم والجوائز",
+        "corporate-events": "الفعاليات المؤسسية",
+        "product-photo": "تصوير المنتجات",
+        "brand-content": "محتوى العلامة التجارية"
       },
       items: [
         {
-          title: "منصة عقارية فاخرة",
-          client: "الحمراء العقارية",
-          category: "web",
-          desc: "بوابة تفاعلية فاخرة مع عرض ثلاثي الأبعاد وقمع متقدم للحصول على المستثمرين.",
-          image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+          title: "تغطية قمة الخليج للتكنولوجيا",
+          client: "ديتك دبي",
+          category: "event-photo",
+          desc: "تغطية احترافية للفعاليات تلتقط جلسات المتحدثين وأعضاء لجنة التحكيم.",
+          image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "هوية بصرية لمطعم راقٍ",
-          client: "مطعم مينا",
-          category: "branding",
-          desc: "هوية بصرية متكاملة وشعار وقوائم طعام فاخرة في منطقة دبي مارينا.",
-          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+          title: "فيلم إطلاق اليخوت الفاخرة",
+          client: "جلف كرافت",
+          category: "event-video",
+          desc: "فيديو ترويجي سينمائي لإطلاق اليخت مع مونتاج احترافي وتغطية جوية.",
+          image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "حملة إعلانات لعيادة تجميل",
-          client: "عيادة إيليت الطبية",
-          category: "ads",
-          desc: "إعلانات مستهدفة بدقة عبر إنستغرام أدت لزيادة الحجوزات المؤكدة بمعدل 5.2 ضعف.",
-          image: "https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&w=800&q=80"
+          title: "شهادات العملاء التنفيذية",
+          client: "فانغارد كابيتال",
+          category: "interview",
+          desc: "مقابلات مصورة باحترافية تسلط الضوء على المحافظ الاستثمارية الفاخرة.",
+          image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "جلسات تصوير لعلامة تجميل",
-          client: "نورا لمستحضرات التجميل",
-          category: "media",
-          desc: "تصوير منتجات احترافي وفيديوهات ريلز تبرز جودة وألوان أحمر الشفاه العضوي.",
+          title: "مقاطع ريلز لنمط الحياة البهيج",
+          client: "مستحضرات تجميل نورا",
+          category: "reels",
+          desc: "مقاطع ريلز تفاعلية ومحسنة لمنصات إنستغرام وتيك توك ويوتيوب.",
           image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "متجر مجوهرات إلكتروني فاخر",
-          client: "مجوهرات زعبيل",
-          category: "web",
-          desc: "تطوير متجر شوبيفاي متطور ومدمج بالكامل مع تابي، تمارا، و أبل باي لسهولة الشراء.",
-          image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+          title: "ملخص سباق فورمولا 1 أبوظبي",
+          client: "حلبة مرسى ياس",
+          category: "highlights",
+          desc: "فيديو ملخص تفاعلي يبرز اللحظات المثيرة والسرعات العالية على المضمار وخارجه.",
+          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
         },
         {
-          title: "إدارة ونمو منصة سيارات",
-          client: "هايبريون للسيارات",
-          category: "social",
-          desc: "تصاميم وفيديوهات ريلز مميزة ساهمت في جذب 50 ألف متابع محلي خلال 90 يوماً.",
-          image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80"
+          title: "بورتريهات مجلس الإدارة وفريق العمل",
+          client: "إعمار العقارية",
+          category: "group-photo",
+          desc: "صور جماعية احترافية لأعضاء مجلس الإدارة لتقرير النتائج السنوي.",
+          image: "https://images.unsplash.com/photo-1556761175-b813d53a362e?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "جوائز التميز لقطاع الأعمال",
+          client: "غرفة دبي",
+          category: "awards",
+          desc: "تغطية تسليم الجوائز على المسرح وصور جماعية لكبار الشخصيات والمسؤولين.",
+          image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "منتدى القيادة السنوي لقادة النفط",
+          client: "مجموعة أدنوك",
+          category: "corporate-events",
+          desc: "تغطية إعلامية متكاملة لملتقى ADNOC السنوي المغلق للقيادات العالمية.",
+          image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "لقطات فاخرة لزجاجات العطور",
+          client: "عود رويال دبي",
+          category: "product-photo",
+          desc: "تصوير منتجات استوديو احترافي لزجاجات العطور العربية الراقية.",
+          image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "حملة الهوية البصرية لنمط المعيشة",
+          client: "شقق مارينا السكنية",
+          category: "brand-content",
+          desc: "صناعة محتوى ترويجي وبصري متكامل لجذب السكان للمشروع الفاخر الجديد.",
+          image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
         }
       ]
     },

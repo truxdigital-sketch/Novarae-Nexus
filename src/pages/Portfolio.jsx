@@ -18,11 +18,16 @@ export default function Portfolio() {
 
   const filters = [
     { id: 'all', label: translate('portfolio.all') },
-    { id: 'web', label: translate('portfolio.categories.web') },
-    { id: 'branding', label: translate('portfolio.categories.branding') },
-    { id: 'social', label: translate('portfolio.categories.social') },
-    { id: 'ads', label: translate('portfolio.categories.ads') },
-    { id: 'media', label: translate('portfolio.categories.media') }
+    { id: 'event-photo', label: translate('portfolio.categories.event-photo') },
+    { id: 'event-video', label: translate('portfolio.categories.event-video') },
+    { id: 'interview', label: translate('portfolio.categories.interview') },
+    { id: 'reels', label: translate('portfolio.categories.reels') },
+    { id: 'highlights', label: translate('portfolio.categories.highlights') },
+    { id: 'group-photo', label: translate('portfolio.categories.group-photo') },
+    { id: 'awards', label: translate('portfolio.categories.awards') },
+    { id: 'corporate-events', label: translate('portfolio.categories.corporate-events') },
+    { id: 'product-photo', label: translate('portfolio.categories.product-photo') },
+    { id: 'brand-content', label: translate('portfolio.categories.brand-content') }
   ];
 
   const projects = translate('portfolio.items');
@@ -30,52 +35,84 @@ export default function Portfolio() {
   // Static details for case studies (synced by project index)
   const caseStudiesData = [
     {
-      challengeEn: "Al Hamra Realty needed to capture premium international real estate investors but their existing platform was slow, template-based, and lacked interactive filtering for villa communities.",
-      challengeAr: "كانت شركة الحمراء العقارية بحاجة إلى جذب مستثمرين عقاريين دوليين، لكن منصتهم السابقة كانت بطيئة، وتعتمد على قوالب جاهزة وتفتقر إلى التصفية التفاعلية للمجمعات السكنية.",
-      solutionEn: "We designed a bespoke headless React architecture with WebGL elements, smooth animations, and optimized WhatsApp lead routers, achieving less than 1s page load times.",
-      solutionAr: "قمنا بتصميم بنية برمجية مخصصة تعتمد على واجهات React التفاعلية، مع استخدام تأثيرات حركية خفيفة، وتحسين مسارات واتساب المباشرة للعملاء، مما أدى لتحقيق سرعة تحميل أقل من ثانية.",
-      resultEn: "420+ premium investor inquiries in 45 days, 3.2s reduction in load speed.",
-      resultAr: "أكثر من 420 طلباً من مستثمرين مؤهلين خلال 45 يوماً، وخفض وقت التحميل بمعدل 3.2 ثانية."
+      challengeEn: "DTEC needed comprehensive, high-quality images of their annual tech summit delivered within hours for press releases.",
+      challengeAr: "احتاجت ديتك إلى تغطية فوتوغرافية شاملة وعالية الجودة لقمة التكنولوجيا السنوية لتسليمها لوسائل الإعلام خلال ساعات.",
+      solutionEn: "We deployed 3 professional photographers and a real-time editing station, uploading color-corrected photos to a live shared gallery.",
+      solutionAr: "قمنا بنشر 3 مصورين محترفين مع محطة تحرير فورية في الموقع، مع رفع الصور المصححة إلى معرض مشاركة رقمي مباشر.",
+      resultEn: "1,200+ retouched photos delivered, featured in 15+ publications.",
+      resultAr: "أكثر من 1200 صورة معدلة تم تسليمها، ونشرت في 15+ وسيلة إعلامية."
     },
     {
-      challengeEn: "Mina Restaurant lacked an authentic visual presence. Their social media channels looked uncoordinated, failing to capture their high-end Mediterranean aesthetic.",
-      challengeAr: "كان مطعم مينا يفتقر لحضور بصري متكامل. بدت قنوات التواصل الاجتماعي غير متناسقة وفشلت في عكس الجماليات الفخامة للبحر الأبيض المتوسط.",
-      solutionEn: "We completed a full corporate rebrand, designing premium packaging, menus, and producing cinematic reels highlighting signature dishes on location.",
-      solutionAr: "أنجزنا إعادة بناء كاملة للهوية البصرية، وتصميم عبوات التغليف الفاخرة، وقوائم الطعام، مع إنتاج مقاطع فيديو سينمائية تسلط الضوء على الأطباق المميزة في الموقع.",
-      resultEn: "Social engagements up 240%, fully booked table occupancy on weekends.",
-      resultAr: "زيادة التفاعل على الشبكات بنسبة 240%، ونسبة إشغال كاملة للطاولات في عطلة نهاية الأسبوع."
+      challengeEn: "Gulf Craft launched a new superyacht and required a cinematic masterpiece showcasing the engineering and luxury design.",
+      challengeAr: "أطلقت شركة جلف كرافت يختاً سوبر جديداً وتطلبت عملاً سينمائياً يبرز تفاصيل الهندسة والجماليات الفاخرة لليخت.",
+      solutionEn: "Our video crew shot over 2 days using 4K cinema cameras, aerial drones, and stabilized gimbal rigs during sunset cruises.",
+      solutionAr: "قام فريق تصوير الفيديو بالعمل على مدار يومين باستخدام كاميرات سينمائية 4K وطائرات درون وكاميرات مثبتة أثناء جولات الغروب.",
+      resultEn: "3 minute brand film delivering 100k+ views, 5 VIP leads.",
+      resultAr: "فيلم ترويجي مدته 3 دقائق حقق 100ألف+ مشاهدة و5 عملاء محتملين كبار."
     },
     {
-      challengeEn: "Elite Wellness Clinic faced high customer acquisition costs (CAC) via traditional display networks, failing to fill aesthetic therapy slots.",
-      challengeAr: "واجهت عيادة إيليت الطبية ارتفاعاً كبيراً في تكلفة جذب العميل (CAC) عبر الشبكات الإعلانية التقليدية، وفشلت في ملء حجوزات العلاج التجميلي.",
-      solutionEn: "We implemented high-intent Meta Lead Ads with personalized video creatives targeting affluent Dubai and Abu Dhabi neighborhoods.",
-      solutionAr: "قمنا بتطبيق حملات إعلانية ذكية عبر ميتا للحصول على عملاء مهتمين بالتجميل، مستهدفين الأحياء السكنية الفاخرة في دبي وأبوظبي.",
-      resultEn: "5.2x increase in bookings, CAC dropped by 45%.",
-      resultAr: "زيادة الحجوزات بمعدل 5.2 ضعف، وخفض تكلفة جذب العميل بنسبة 45%."
+      challengeEn: "A UAE wealth management firm struggled to convert premium prospects online due to a lack of verified trust assets.",
+      challengeAr: "واجهت شركة إدارة ثروات إماراتية صعوبة في تحويل العملاء الأثرياء عبر الإنترنت بسبب الافتقار للأصول الموثوقة والشهادات المعتمدة.",
+      solutionEn: "We produced a series of 3 high-end executive testimonial videos featuring top-tier clients sharing their growth stories.",
+      solutionAr: "أنتجنا سلسلة من 3 فيديوهات عالية الجودة لآراء العملاء التنفيذيين تضم عملاء مرموقين يتحدثون عن تجاربهم.",
+      resultEn: "Inbound client acquisition increased by 42% in Q4.",
+      resultAr: "ارتفع معدل استقطاب العملاء الجدد بنسبة 42% في الربع الرابع."
     },
     {
       challengeEn: "Nura Cosmetics launched a new organic lip gloss line but struggled to generate visual assets that met regional beauty standards.",
       challengeAr: "أطلقت شركة نورا خطاً جديداً لملمع الشفاه العضوي ولكنها كافحت لإنتاج أصول مرئية تلبي معايير الجمال والجاذبية في المنطقة.",
       solutionEn: "Our creative team organized high-end studio model shoots and created reels optimized for TikTok and Instagram Shopping.",
       solutionAr: "نظم فريقنا الإبداعي جلسات تصوير احترافية في الاستوديو مع عارضات أزياء، وأنتج مقاطع ريلز مهيأة لمتجر تيك توك وإنستغرام.",
-      resultEn: "Over 2 million organic views, 100% catalog checkout sync success.",
+      resultEn: "Over 2 million organic views, 100% checkout sync success.",
       resultAr: "أكثر من 2 مليون مشاهدة مجانية، ومزامنة كتالوج المنتجات بنسبة 100%."
     },
     {
-      challengeEn: "Zabeel Jewelry wanted an e-commerce platform that supported flexible payment retainers (BNPL) to match Middle Eastern buyer trends.",
-      challengeAr: "أرادت مجوهرات زعبيل منصة تجارة إلكترونية تدعم خيارات الدفع المرنة (تابي وتمارا) للتوافق مع اتجاهات المشترين في الشرق الأوسط.",
-      solutionEn: "We created a Shopify Custom design, integrating Tabby & Tamara installments seamlessly and implementing a premium checkout experience.",
-      solutionAr: "قمنا بتطوير تصميم مخصص على شوبيفاي، مع دمج تيسيرات تابي وتمارا لتقسيط المبيعات بشكل سلس وتوفير تجربة دفع فاخرة.",
-      resultEn: "32% increase in Average Order Value, cart abandonment dropped by 18%.",
-      resultAr: "زيادة متوسط قيمة الطلب بنسبة 32%، وانخفاض سلات الشراء المتروكة بنسبة 18%."
+      challengeEn: "Yas Marina Circuit needed a high-octane 60-second highlight reel summarizing the race weekend to drive ticket sales for next year.",
+      challengeAr: "احتاجت حلبة مرسى ياس إلى فيديو ملخص مثير مدته 60 ثانية يلخص فعاليات عطلة السباق لزيادة مبيعات التذاكر للعام المقبل.",
+      solutionEn: "We compiled high-speed race footage, fan activations, concert clips, and VIP lounge moments into a fast-paced edit.",
+      solutionAr: "قمنا بجمع لقطات السباق عالية السرعة، وتفاعل الجماهير، وحفلات الغناء، وكبار الشخصيات في فيديو سريع الإيقاع.",
+      resultEn: "1.5M+ impressions, record-breaking early bird sales.",
+      resultAr: "أكثر من 1.5 مليون ظهور، ومبيعات قياسية للتذاكر المبكرة."
     },
     {
-      challengeEn: "Hyperion Automotive launched in UAE but had zero brand awareness on social platforms, resulting in slow showroom foot traffic.",
-      challengeAr: "انطلقت شركة هايبريون للسيارات في الإمارات ولكنها لم تحظَ بأي وعي بالعلامة التجارية على شبكات التواصل، مما تسبب في ضعف حركة المعرض.",
-      solutionEn: "We developed a premium social strategy combining high-octane videography with interactive stories and community targeting.",
-      solutionAr: "قمنا بصياغة استراتيجية تفاعل قوية تجمع بين تصوير السيارات الرياضية والقصص التفاعلية واستهداف مجتمعات محبي السيارات.",
-      resultEn: "50k+ local followers in 90 days, 350+ showroom visits generated.",
-      resultAr: "أكثر من 50 ألف متابع محلي في 90 يوماً، وأكثر من 350 زيارة مؤكدة للمعرض."
+      challengeEn: "Emaar needed formal board portraits and department group photos with unified branding and lighting at their corporate HQ.",
+      challengeAr: "احتاجت شركة إعمار إلى بورتريهات رسمية لأعضاء مجلس الإدارة وصور جماعية للأقسام بإضاءة وهوية بصرية موحدة في مقرها.",
+      solutionEn: "We set up a mobile studio with softbox lighting grids in their main boardroom, capturing 12 distinct team lineups.",
+      solutionAr: "أعددنا استوديو متنقلاً مع شبكات إضاءة في غرفة الاجتماعات الرئيسية، وصورنا 12 مجموعة مختلفة من فرق العمل.",
+      resultEn: "Premium board portraits published in the annual report.",
+      resultAr: "تم نشر صور مجلس الإدارة الفاخرة في التقرير السنوي بنجاح."
+    },
+    {
+      challengeEn: "Covering a prestigious awards gala with VIP government officials, requiring strict security clearance and zero stage disruptions.",
+      challengeAr: "تغطية حفل توزيع جوائز مرموق بحضور شخصيات حكومية رفيعة، مما تطلب تصاريح أمنية صارمة وعدم إحداث أي فوضى على المسرح.",
+      solutionEn: "Our senior event photographers used silent shutter lenses and wireless lighting triggers to capture key handshake moments.",
+      solutionAr: "استخدم مصورو الفعاليات المحترفون عدسات ذات غالق صامت وأجهزة تحكم في الإضاءة لالتقاط لحظات المصافحة الرئيسية.",
+      resultEn: "Zero disruption, 100+ winner photos delivered live to press.",
+      resultAr: "تغطية دون أي إزعاج، وتم تسليم أكثر من 100 صورة للفائزين مباشرة للصحافة."
+    },
+    {
+      challengeEn: "ADNOC required full-service media coverage (photo, video, and recap reels) for an exclusive, closed-door strategy summit.",
+      challengeAr: "طلبت مجموعة أدنوك تغطية إعلامية متكاملة (تصوير فوتوغرافي، فيديو، وفيديو ملخص) لمنتدى استراتيجي مغلق وحصري.",
+      solutionEn: "We deployed a specialized 4-person crew with NDAs, shooting executive sessions, team-building outdoor activities, and panel talks.",
+      solutionAr: "أرسلنا فريقاً متخصصاً من 4 أشخاص وقعوا على اتفاقيات سرية، لتصوير الجلسات والأنشطة وحلقات النقاش.",
+      resultEn: "Delivered 400 premium photos and a 3-minute summary video.",
+      resultAr: "تسليم 400 صورة مميزة وفيديو ملخص مدته 3 دقائق للاستخدام الداخلي."
+    },
+    {
+      challengeEn: "Oud Royale wanted high-end product photos showing the gold details of their perfume bottles with a dark luxury look.",
+      challengeAr: "أرادت عود رويال صور منتجات فاخرة تبرز تفاصيل الذهب لزجاجات العطور الخاصة بها بطابع فخم ومظلم.",
+      solutionEn: "We used precision macro lighting, gold leaf reflections, and smoke effects in our studio to create high-resolution product stills.",
+      solutionAr: "استخدمنا إضاءة ماكرو دقيقة وانعكاسات ورق الذهب وتأثيرات الدخان في الاستوديو لإنشاء صور منتجات عالية الدقة.",
+      resultEn: "12 hero visuals used in Dubai Mall print advertisements.",
+      resultAr: "استخدام 12 صورة بطلة في إعلانات مطبوعة في دبي مول."
+    },
+    {
+      challengeEn: "A newly built luxury tower wanted to create a lifestyle campaign to attract wealthy tenants before official opening.",
+      challengeAr: "أراد برج سكني فاخر جديد إنشاء حملة تسويقية لنمط الحياة لجذب مستأجرين أثرياء قبل الافتتاح الرسمي للبرج.",
+      solutionEn: "We created a comprehensive campaign theme combining vertical video walk-throughs, lifestyle flat-lays, and resident persona reels.",
+      solutionAr: "صممنا طابع حملة متكامل يجمع بين جولات الفيديو الرأسية وتصوير مساحات المعيشة وريلز تحاكي المقيمين.",
+      resultEn: "95% occupancy achieved within 3 months of campaign.",
+      resultAr: "تحقيق نسبة إشغال 95% خلال 3 أشهر من إطلاق الحملة."
     }
   ];
 

@@ -53,18 +53,52 @@ export default function Portal() {
     setActiveTab('dashboard');
   };
 
-  // Mock Invoice items
-  const invoices = [
+  // Mock Service Options for builders
+  const servicesOptions = [
+    { id: 'digital-marketing', nameEn: 'Digital Marketing', nameAr: 'التسويق الرقمي' },
+    { id: 'social-media', nameEn: 'Social Media Management', nameAr: 'إدارة منصات التواصل الاجتماعي' },
+    { id: 'meta-ads', nameEn: 'Meta Ads (Instagram & Facebook)', nameAr: 'إعلانات ميتا (إنستغرام وفيسبوك)' },
+    { id: 'google-ads', nameEn: 'Google Ads & PPC', nameAr: 'إعلانات جوجل والتسويق بالنقرة' },
+    { id: 'seo', nameEn: 'Search Engine Optimization (SEO)', nameAr: 'تحسين محركات البحث (SEO)' },
+    { id: 'web-design', nameEn: 'Website Design', nameAr: 'تصميم المواقع الإلكترونية' },
+    { id: 'ecommerce', nameEn: 'E-commerce Development', nameAr: 'تطوير المتاجر الإلكترونية' },
+    { id: 'branding', nameEn: 'Branding & Identity', nameAr: 'الهوية التجارية والبصرية' },
+    { id: 'event-photography', nameEn: 'Event Photography', nameAr: 'التصوير الفوتوغرافي للفعاليات' },
+    { id: 'event-videography', nameEn: 'Event Videography', nameAr: 'تصوير الفيديو للفعاليات' },
+    { id: 'interview-videography', nameEn: 'Interview & Testimonial Videos', nameAr: 'فيديوهات المقابلات وآراء العملاء' },
+    { id: 'social-media-reels', nameEn: 'Social Media Reels', nameAr: 'فيديوهات الريلز للشبكات الاجتماعية' },
+    { id: 'highlight-videos', nameEn: 'Highlight Videos', nameAr: 'فيديوهات ملخصة وتسليط الضوء' },
+    { id: 'group-award-photography', nameEn: 'Group & Award Photography', nameAr: 'التصوير الجماعي وحفلات الجوائز' }
+  ];
+
+  // States for builders
+  const [invoicesList, setInvoicesList] = useState([
     { id: 'INV-2026-001', client: 'Al Hamra Realty', date: 'June 10, 2026', amount: 'AED 15,000', status: 'Paid', items: [{ desc: 'Bespoke Corporate Website Design & Dev', qty: 1, rate: 15000 }] },
     { id: 'INV-2026-002', client: 'Mina Restaurant', date: 'June 15, 2026', amount: 'AED 9,500', status: 'Paid', items: [{ desc: 'Meta & Google Campaign Management - Retainer', qty: 1, rate: 9500 }] },
     { id: 'INV-2026-003', client: 'Zabeel Jewelry', date: 'June 20, 2026', amount: 'AED 25,000', status: 'Pending', items: [{ desc: 'Shopify E-commerce Portal Development & Payment Sync', qty: 1, rate: 25000 }] }
-  ];
+  ]);
 
-  // Mock Proposals
-  const proposals = [
+  const [proposalsList, setProposalsList] = useState([
     { id: 'PROP-2026-90', client: 'Falcon Aviation', title: 'Q3 Performance Ads & Local SEO Campaign', budget: 'AED 18,500 / month', duration: '6 Months', scope: ['Meta Pixel & Google PMax campaigns setup', 'Bilingual Search term SEO audit', '2 video reels/mo', 'Dedicated support'] },
     { id: 'PROP-2026-91', client: 'Jumeirah retail', title: 'Meta Ads scaling and Influencer Seeding', budget: 'AED 9,500 / month', duration: '3 Months', scope: ['Social media content calendar creation', 'Targeting premium Dubai demographics', 'A/B dynamic ad sets optimization'] }
-  ];
+  ]);
+
+  const [showInvoiceBuilder, setShowInvoiceBuilder] = useState(false);
+  const [showProposalBuilder, setShowProposalBuilder] = useState(false);
+
+  // Invoice builder form states
+  const [newInvClient, setNewInvClient] = useState('');
+  const [newInvService, setNewInvService] = useState('event-photography');
+  const [newInvRate, setNewInvRate] = useState(5000);
+  const [newInvQty, setNewInvQty] = useState(1);
+
+  // Proposal builder form states
+  const [newPropClient, setNewPropClient] = useState('');
+  const [newPropTitle, setNewPropTitle] = useState('');
+  const [newPropService, setNewPropService] = useState('event-photography');
+  const [newPropBudget, setNewPropBudget] = useState(12000);
+  const [newPropDuration, setNewPropDuration] = useState(3);
+  const [newPropScope, setNewPropScope] = useState('');
 
   // Mock Email templates
   const emailTemplates = [
@@ -78,7 +112,7 @@ export default function Portal() {
       id: 'email-report',
       subject: 'Monthly Campaign Performance Report - Novarae Nexus',
       title: 'Your Performance Metrics are Ready',
-      body: 'Your live Google Looker Studio dashboard has been updated. Meta Ads ROAS has scaled to 4.8x this month, and organic search traffic has seen an increase of 24%.'
+      body: 'Your live Google Looker Studio dashboard has been updated. Meta Ads ROAS has scaled to 4.8x this month, and organic search traffic has seen an increase of 24.'
     }
   ];
 
@@ -247,10 +281,72 @@ export default function Portal() {
           {/* TAB 2: PDF INVOICES */}
           {activeTab === 'invoices' && (
             <div className="tab-view fade-in">
-              <div className="tab-header">
-                <h1>{locale === 'en' ? 'PDF Invoices Management' : 'إدارة الفواتير PDF'}</h1>
-                <p>{locale === 'en' ? 'View and print official brand-logo invoices for auditing.' : 'عرض وطباعة الفواتير الرسمية للتدقيق والحسابات.'}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
+                <div style={{ flex: '1 1 300px', textAlign: locale === 'en' ? 'left' : 'right' }}>
+                  <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.4rem' }}>{locale === 'en' ? 'PDF Invoices Management' : 'إدارة الفواتير PDF'}</h1>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{locale === 'en' ? 'View, build, and print official brand-logo invoices.' : 'عرض، بناء، وطباعة الفواتير الرسمية للعلامة التجارية.'}</p>
+                </div>
+                <button className="btn btn-primary" onClick={() => setShowInvoiceBuilder(!showInvoiceBuilder)}>
+                  <span>{showInvoiceBuilder ? (locale === 'en' ? 'Close Builder' : 'إغلاق المنشئ') : (locale === 'en' ? 'Invoice Builder' : 'منشئ الفواتير')}</span>
+                </button>
               </div>
+
+              {showInvoiceBuilder && (
+                <div className="builder-form-card glass-panel mb-4 p-3 fade-in" style={{ background: 'rgba(26, 29, 38, 0.6)', border: '1px solid var(--border-glass)', padding: '2rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem' }}>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.25rem', fontWeight: 700 }}>{locale === 'en' ? 'Create Custom Corporate Invoice' : 'إنشاء فاتورة مؤسسية مخصصة'}</h3>
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    const newId = `INV-2026-00${invoicesList.length + 1}`;
+                    const selectedOpt = servicesOptions.find(o => o.id === newInvService) || servicesOptions[0];
+                    const desc = locale === 'en' ? selectedOpt.nameEn : selectedOpt.nameAr;
+                    const amountVal = newInvRate * newInvQty;
+                    const newInvoice = {
+                      id: newId,
+                      client: newInvClient,
+                      date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+                      amount: `AED ${amountVal.toLocaleString()}`,
+                      status: 'Pending',
+                      items: [{ desc, qty: newInvQty, rate: newInvRate }]
+                    };
+                    setInvoicesList([newInvoice, ...invoicesList]);
+                    setSelectedInvoice(newInvoice); // Auto open preview modal
+                    setShowInvoiceBuilder(false);
+                    // Reset fields
+                    setNewInvClient('');
+                    setNewInvService('event-photography');
+                    setNewInvRate(5000);
+                    setNewInvQty(1);
+                  }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Client / Company Name' : 'اسم العميل / الشركة'}</label>
+                        <input type="text" className="form-control" placeholder="e.g. Al Futtaim Group" value={newInvClient} onChange={e => setNewInvClient(e.target.value)} required />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Select Billing Service' : 'اختر الخدمة المفوترة'}</label>
+                        <select className="form-control" value={newInvService} onChange={e => setNewInvService(e.target.value)} required>
+                          {servicesOptions.map(opt => (
+                            <option key={opt.id} value={opt.id} style={{ backgroundColor: 'var(--bg-surface)' }}>
+                              {locale === 'en' ? opt.nameEn : opt.nameAr}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Service Rate (AED)' : 'سعر الخدمة (درهم)'}</label>
+                        <input type="number" className="form-control" value={newInvRate} onChange={e => setNewInvRate(Number(e.target.value))} required />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Quantity' : 'الكمية'}</label>
+                        <input type="number" className="form-control" value={newInvQty} onChange={e => setNewInvQty(Number(e.target.value))} required />
+                      </div>
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                      <span>{locale === 'en' ? 'Generate & Preview Invoice' : 'توليد ومعاينة الفاتورة'}</span>
+                    </button>
+                  </form>
+                </div>
+              )}
 
               <div className="invoices-list-table mt-3 glass-panel">
                 <div className="table-header-row">
@@ -260,7 +356,7 @@ export default function Portal() {
                   <span>{locale === 'en' ? 'Amount' : 'المبلغ'}</span>
                   <span>{locale === 'en' ? 'Action' : 'الإجراء'}</span>
                 </div>
-                {invoices.map((inv) => (
+                {invoicesList.map((inv) => (
                   <div key={inv.id} className="table-data-row">
                     <span className="inv-code">{inv.id}</span>
                     <span>{inv.client}</span>
@@ -283,13 +379,88 @@ export default function Portal() {
           {/* TAB 3: PDF PROPOSALS */}
           {activeTab === 'proposals' && (
             <div className="tab-view fade-in">
-              <div className="tab-header">
-                <h1>{locale === 'en' ? 'PDF Growth Proposals' : 'مقترحات وعروض النمو PDF'}</h1>
-                <p>{locale === 'en' ? 'Access active roadmaps, scopes of work, and ad briefs.' : 'الوصول لعروض العمل القائمة ومقترحات الميزانيات الترويجية.'}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.05)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
+                <div style={{ flex: '1 1 300px', textAlign: locale === 'en' ? 'left' : 'right' }}>
+                  <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.4rem' }}>{locale === 'en' ? 'PDF Growth Proposals' : 'مقترحات وعروض النمو PDF'}</h1>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{locale === 'en' ? 'Access active roadmaps, scopes of work, and build custom briefs.' : 'الوصول لعروض العمل القائمة ومقترحات الميزانيات وبناء العروض المخصصة.'}</p>
+                </div>
+                <button className="btn btn-primary" onClick={() => setShowProposalBuilder(!showProposalBuilder)}>
+                  <span>{showProposalBuilder ? (locale === 'en' ? 'Close Builder' : 'إغلاق المنشئ') : (locale === 'en' ? 'Proposal Builder' : 'منشئ العروض')}</span>
+                </button>
               </div>
 
+              {showProposalBuilder && (
+                <div className="builder-form-card glass-panel mb-4 p-3 fade-in" style={{ background: 'rgba(26, 29, 38, 0.6)', border: '1px solid var(--border-glass)', padding: '2rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem' }}>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.25rem', fontWeight: 700 }}>{locale === 'en' ? 'Create Custom Growth Proposal' : 'إنشاء مقترح نمو مخصص'}</h3>
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    const newId = `PROP-2026-${90 + proposalsList.length + 1}`;
+                    const selectedOpt = servicesOptions.find(o => o.id === newPropService) || servicesOptions[0];
+                    const svcName = locale === 'en' ? selectedOpt.nameEn : selectedOpt.nameAr;
+                    const scopeArr = [
+                      locale === 'en' ? `Full onboarding & setup for ${svcName}` : `تهيئة وإعداد كامل لـ ${svcName}`,
+                      ...newPropScope.split('\n').filter(l => l.trim() !== '')
+                    ];
+                    const newProposal = {
+                      id: newId,
+                      client: newPropClient,
+                      title: newPropTitle || (locale === 'en' ? `${svcName} Strategic Growth Campaign` : `حملة النمو الاستراتيجي لـ ${svcName}`),
+                      budget: `AED ${Number(newPropBudget).toLocaleString()} / month`,
+                      duration: `${newPropDuration} Months`,
+                      scope: scopeArr
+                    };
+                    setProposalsList([newProposal, ...proposalsList]);
+                    setSelectedProposal(newProposal); // Auto open preview modal
+                    setShowProposalBuilder(false);
+                    // Reset fields
+                    setNewPropClient('');
+                    setNewPropTitle('');
+                    setNewPropService('event-photography');
+                    setNewPropBudget(12000);
+                    setNewPropDuration(3);
+                    setNewPropScope('');
+                  }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Client / Partner Name' : 'اسم الشريك / العميل'}</label>
+                        <input type="text" className="form-control" placeholder="e.g. Majid Al Futtaim" value={newPropClient} onChange={e => setNewPropClient(e.target.value)} required />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Proposal Campaign Title' : 'عنوان حملة المقترح'}</label>
+                        <input type="text" className="form-control" placeholder="e.g. Q3 Media Activation Campaign" value={newPropTitle} onChange={e => setNewPropTitle(e.target.value)} />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Core Service Offer' : 'الخدمة الأساسية المعروضة'}</label>
+                        <select className="form-control" value={newPropService} onChange={e => setNewPropService(e.target.value)} required>
+                          {servicesOptions.map(opt => (
+                            <option key={opt.id} value={opt.id} style={{ backgroundColor: 'var(--bg-surface)' }}>
+                              {locale === 'en' ? opt.nameEn : opt.nameAr}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Monthly Budget Retainer (AED)' : 'الميزانية الشهرية (درهم)'}</label>
+                        <input type="number" className="form-control" value={newPropBudget} onChange={e => setNewPropBudget(Number(e.target.value))} required />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Campaign Duration (Months)' : 'مدة الحملة (أشهر)'}</label>
+                        <input type="number" className="form-control" value={newPropDuration} onChange={e => setNewPropDuration(Number(e.target.value))} required />
+                      </div>
+                      <div className="form-group" style={{ gridColumn: '1 / -1' }}>
+                        <label className="form-label" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>{locale === 'en' ? 'Custom Scope Deliverables (One per line)' : 'مخرجات مخصصة (واحدة في كل سطر)'}</label>
+                        <textarea className="form-control" rows={3} placeholder={locale === 'en' ? "e.g.\nCinematic event recap reel (60s)\n100+ fully graded corporate team photos\nDedicated project producer support" : "مثال:\nفيديو ملخص للفعالية مدته 60 ثانية\n100+ صورة احترافية معدلة للفريق\nدعم مخصص من مدير الإنتاج"} value={newPropScope} onChange={e => setNewPropScope(e.target.value)} required></textarea>
+                      </div>
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                      <span>{locale === 'en' ? 'Generate & Preview Proposal' : 'توليد ومعاينة المقترح'}</span>
+                    </button>
+                  </form>
+                </div>
+              )}
+
               <div className="proposals-grid-list mt-3">
-                {proposals.map((prop) => (
+                {proposalsList.map((prop) => (
                   <div key={prop.id} className="proposal-brief-card glass-panel">
                     <div className="prop-header-info">
                       <span className="badge">{prop.id}</span>

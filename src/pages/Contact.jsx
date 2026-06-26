@@ -17,6 +17,12 @@ export default function Contact() {
     { id: 'web-design', name: t('services.items.web-design.title') },
     { id: 'ecommerce', name: t('services.items.ecommerce.title') },
     { id: 'branding', name: t('services.items.branding.title') },
+    { id: 'event-photography', name: t('services.items.event-photography.title') },
+    { id: 'event-videography', name: t('services.items.event-videography.title') },
+    { id: 'interview-videography', name: t('services.items.interview-videography.title') },
+    { id: 'social-media-reels', name: t('services.items.social-media-reels.title') },
+    { id: 'highlight-videos', name: t('services.items.highlight-videos.title') },
+    { id: 'group-award-photography', name: t('services.items.group-award-photography.title') },
     { id: 'other', name: locale === 'en' ? 'Other Inquiry' : 'استفسارات أخرى' }
   ];
 
