@@ -9,7 +9,6 @@ import {
   TrendingUp, 
   Eye, 
   Handshake, 
-  Star, 
   ChevronDown, 
   ChevronUp, 
   ShieldCheck, 
@@ -19,9 +18,8 @@ import {
 import './Pages.css';
 
 export default function Home({ setCurrentPage }) {
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const [activeFaq, setActiveFaq] = useState(null);
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const pillars = [
     { key: 'innovation', icon: <Cpu className="pillar-icon" /> },
@@ -54,21 +52,10 @@ export default function Home({ setCurrentPage }) {
   ];
 
   const processSteps = [0, 1, 2, 3, 4, 5];
-
-  const testimonials = [0, 1, 2];
-
   const faqItems = [0, 1, 2, 3, 4];
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
-  };
-
-  const nextTestimonial = () => {
-    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
@@ -316,35 +303,7 @@ export default function Home({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section section-padding bg-surface-wrap">
-        <div className="container">
-          <div className="section-title-wrapper">
-            <span className="badge">{t('testimonials.badge')}</span>
-            <h2 className="section-title">{t('testimonials.title')}</h2>
-            <p className="section-subtitle">{t('testimonials.subtitle')}</p>
-          </div>
 
-          <div className="testimonial-carousel-container">
-            <button className="carousel-control prev" onClick={prevTestimonial}>‹</button>
-            
-            <div className="testimonial-card glass-panel">
-              <div className="stars-wrapper">
-                {[...Array(t(`testimonials.items.${activeTestimonial}.rating`))].map((_, i) => (
-                  <Star key={i} size={16} fill="var(--secondary)" color="var(--secondary)" />
-                ))}
-              </div>
-              <p className="quote">"{t(`testimonials.items.${activeTestimonial}.quote`)}"</p>
-              <div className="author-info">
-                <h4>{t(`testimonials.items.${activeTestimonial}.name`)}</h4>
-                <span>{t(`testimonials.items.${activeTestimonial}.role`)}</span>
-              </div>
-            </div>
-
-            <button className="carousel-control next" onClick={nextTestimonial}>›</button>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="faq-section section-padding">
