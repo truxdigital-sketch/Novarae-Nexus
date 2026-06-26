@@ -11,13 +11,9 @@ export default function Header({ currentPage, setCurrentPage }) {
     { id: 'home', label: t('nav.home') },
     { id: 'services', label: t('nav.services') },
     { id: 'portfolio', label: t('nav.portfolio') },
-    { id: 'industries', label: t('nav.industries') },
     { id: 'about', label: t('nav.about') },
     { id: 'pricing', label: t('nav.pricing') },
-    { id: 'blog', label: t('nav.blog') },
-    { id: 'careers', label: t('nav.careers') },
-    { id: 'contact', label: t('nav.contact') },
-    { id: 'portal', label: locale === 'en' ? 'Client Portal' : 'بوابة العملاء' }
+    { id: 'contact', label: t('nav.contact') }
   ];
 
   const handleNavClick = (pageId) => {
