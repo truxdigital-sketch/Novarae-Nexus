@@ -195,7 +195,7 @@ export default function Portfolio() {
         <div className="case-study-modal-backdrop" onClick={handleCloseCaseStudy}>
           <div className="case-study-modal glass-panel" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={handleCloseCaseStudy} aria-label="Close modal">
-              <X size={20} />
+              <X size={24} />
             </button>
             
             <div className="modal-header-image" style={{ backgroundImage: `url(${selectedCaseStudy.image})` }}>
