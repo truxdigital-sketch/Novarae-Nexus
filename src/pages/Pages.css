@@ -33,7 +33,7 @@
 
 /* --- HERO SECTION --- */
 .hero-section {
-  padding: 10rem 0 6rem 0;
+  padding: calc(var(--header-height) + 4rem) 0 6rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -671,6 +671,11 @@
 }
 
 /* --- PORTFOLIO & FILTER BAR --- */
+.portfolio-section {
+  padding-top: calc(var(--header-height) + 3rem) !important;
+  padding-bottom: 8rem !important;
+}
+
 .filter-bar {
   display: flex;
   justify-content: center;
@@ -831,9 +836,9 @@
   backdrop-filter: blur(10px);
   z-index: 11000;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: calc(var(--header-height) + 2rem) 2rem 2rem 2rem;
   animation: fadeIn 0.25s ease-out;
 }
 
@@ -842,16 +847,17 @@
   max-width: 900px;
   background: var(--bg-surface-elevated);
   border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--header-height) - 4rem);
   overflow: hidden;
-  max-height: 90vh;
-  overflow-y: auto;
   position: relative;
   border: 1px solid rgba(255,255,255,0.08);
   animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .modal-close-btn {
-  position: fixed;
+  position: absolute;
   top: 24px;
   right: 24px;
   width: 48px;
@@ -929,6 +935,8 @@
 
 .modal-body-content {
   padding: 2.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
 .modal-stats-bar {
@@ -2253,9 +2261,9 @@
   backdrop-filter: blur(10px);
   z-index: 12000;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: calc(var(--header-height) + 2rem) 2rem 2rem 2rem;
   animation: fadeIn 0.25s ease-out;
 }
 
