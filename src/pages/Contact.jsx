@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, Mail, MapPin, Send, HelpCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, HelpCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { submitEnquiry } from '../utils/api';
 import './Pages.css';
 
 export default function Contact() {
   const { locale, t } = useLanguage();
-  const [formState, setFormState] = useState({ name: '', email: '', phone: '', service: '', message: '' });
-  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success'
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    whatsapp: '',
+    company: '',
+    businessType: '',
+    budget: '',
+    contactMethod: '',
+    service: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   const servicesList = [
     { id: 'digital-marketing', name: t('services.items.digital-marketing.title') },
@@ -26,14 +38,32 @@ export default function Contact() {
     { id: 'other', name: locale === 'en' ? 'Other Inquiry' : 'استفسارات أخرى' }
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => {
+    try {
+      await submitEnquiry({
+        ...formState,
+        source: 'General Contact Form'
+      });
       setStatus('success');
-      setFormState({ name: '', email: '', phone: '', service: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        whatsapp: '',
+        company: '',
+        businessType: '',
+        budget: '',
+        contactMethod: '',
+        service: '',
+        message: ''
+      });
+      setTimeout(() => setStatus('idle'), 10000);
+    } catch (err) {
+      console.error('[Contact Form Error]:', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -90,40 +120,120 @@ export default function Contact() {
           <div className="contact-form-col">
             <div className="contact-form-card glass-panel">
               <form className="lead-contact-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label className="form-label">{t('contact.form.name')}</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="e.g. Salem Al Ameri"
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    required
-                  />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.name')}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="e.g. Salem Al Ameri"
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.company')}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="e.g. Al Ameri Group"
+                      value={formState.company}
+                      onChange={(e) => setFormState({ ...formState, company: e.target.value })}
+                    />
+                  </div>
                 </div>
 
-                <div className="form-group">
-                  <label className="form-label">{t('contact.form.email')}</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="e.g. salem@company.ae"
-                    value={formState.email}
-                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    required
-                  />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.email')}</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="e.g. salem@company.ae"
+                      value={formState.email}
+                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.phone')}</label>
+                    <input
+                      type="tel"
+                      className="form-control"
+                      placeholder="e.g. +971 50 000 0000"
+                      value={formState.phone}
+                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div className="form-group">
-                  <label className="form-label">{t('contact.form.phone')}</label>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    placeholder="e.g. +971 50 000 0000"
-                    value={formState.phone}
-                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                    required
-                  />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.whatsapp')}</label>
+                    <input
+                      type="tel"
+                      className="form-control"
+                      placeholder="e.g. +971 50 000 0000"
+                      value={formState.whatsapp}
+                      onChange={(e) => setFormState({ ...formState, whatsapp: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.contactMethod')}</label>
+                    <select
+                      className="form-control"
+                      value={formState.contactMethod}
+                      onChange={(e) => setFormState({ ...formState, contactMethod: e.target.value })}
+                      required
+                    >
+                      <option value="" disabled>{locale === 'en' ? 'Select Contact Method' : 'اختر طريقة التواصل'}</option>
+                      <option value="email" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Email' : 'البريد الإلكتروني'}</option>
+                      <option value="whatsapp" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'WhatsApp' : 'الواتساب'}</option>
+                      <option value="phone" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Phone Call' : 'مكالمة هاتفية'}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.businessType')}</label>
+                    <select
+                      className="form-control"
+                      value={formState.businessType}
+                      onChange={(e) => setFormState({ ...formState, businessType: e.target.value })}
+                      required
+                    >
+                      <option value="" disabled>{locale === 'en' ? 'Select Business Type' : 'اختر نوع العمل'}</option>
+                      <option value="ecommerce" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'E-commerce & Retail' : 'التجارة الإلكترونية والتجزئة'}</option>
+                      <option value="realestate" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Real Estate & Investment' : 'العقارات والاستثمار'}</option>
+                      <option value="hospitality" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Hospitality & F&B' : 'الضيافة والمطاعم'}</option>
+                      <option value="healthcare" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Healthcare & Medical' : 'الرعاية الصحية والطبية'}</option>
+                      <option value="education" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Education & Academy' : 'التعليم والأكاديميات'}</option>
+                      <option value="tech" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Tech & Startup' : 'التقنية والشركات الناشئة'}</option>
+                      <option value="other" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Other Industry' : 'قطاعات أخرى'}</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">{t('contact.form.budget')}</label>
+                    <select
+                      className="form-control"
+                      value={formState.budget}
+                      onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
+                      required
+                    >
+                      <option value="" disabled>{locale === 'en' ? 'Select Monthly Budget' : 'اختر الميزانية الشهرية'}</option>
+                      <option value="under-5k" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'Under AED 5,000' : 'أقل من 5,000 درهم'}</option>
+                      <option value="5k-10k" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'AED 5,000 - 10,000' : '5,000 - 10,000 درهم'}</option>
+                      <option value="10k-20k" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'AED 10,000 - 20,000' : '10,000 - 20,000 درهم'}</option>
+                      <option value="above-20k" style={{ backgroundColor: 'var(--bg-surface)' }}>{locale === 'en' ? 'AED 20,000+' : 'أكثر من 20,000 درهم'}</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="form-group">
@@ -163,8 +273,16 @@ export default function Contact() {
               </form>
 
               {status === 'success' && (
-                <div className="form-success-alert glass-panel mt-3">
-                  <p>{t('contact.form.success')}</p>
+                <div className="form-success-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', borderColor: 'var(--primary)', color: 'var(--text-primary)' }}>
+                  <CheckCircle size={20} color="var(--primary)" />
+                  <p style={{ margin: 0, whiteSpace: 'pre-line' }}>{t('contact.form.success')}</p>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="form-error-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', borderColor: '#ef4444', color: '#fca5a5' }}>
+                  <AlertCircle size={20} color="#ef4444" />
+                  <p style={{ margin: 0 }}>{t('contact.form.error')}</p>
                 </div>
               )}
             </div>

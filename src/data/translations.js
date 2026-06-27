@@ -400,11 +400,17 @@ export const translations = {
         name: "Full Name",
         email: "Work Email",
         phone: "Phone Number",
+        whatsapp: "WhatsApp Number (Optional)",
+        company: "Company Name",
+        businessType: "Business Type",
+        budget: "Estimated Monthly Budget",
+        contactMethod: "Preferred Contact Method",
         service: "Select Service",
         message: "Message",
         submit: "Send Proposal",
         sending: "Sending...",
-        success: "Thank you! Our growth specialist will contact you in 2 hours."
+        success: "Thank you for contacting Novarae Nexus!\n\nYour enquiry has been received successfully. Our team will contact you shortly.",
+        error: "We couldn't submit your enquiry at the moment. Please try again in a few minutes or contact us directly via WhatsApp."
       }
     },
     pricing: {
@@ -949,11 +955,17 @@ export const translations = {
         name: "الاسم الكامل",
         email: "البريد الإلكتروني للعمل",
         phone: "رقم الهاتف",
+        whatsapp: "رقم الواتساب (اختياري)",
+        company: "اسم الشركة",
+        businessType: "نوع النشاط التجاري",
+        budget: "الميزانية الشهرية التقريبية",
+        contactMethod: "طريقة التواصل المفضلة",
         service: "اختر الخدمة",
         message: "تفاصيل الرسالة",
         submit: "أرسل المقترح",
         sending: "جاري الإرسال...",
-        success: "شكراً لك! سيتصل بك أخصائي النمو لدينا خلال ساعتين."
+        success: "نشكرك على تواصلك مع نوفاراي نيكسس!\n\nتم استلام استفسارك بنجاح. سيتصل بك فريقنا قريباً.",
+        error: "لم نتمكن من تقديم استفسارك في الوقت الحالي. يرجى المحاولة مرة أخرى بعد بضع دقائق أو الاتصال بنا مباشرة عبر الواتساب."
       }
     },
     pricing: {

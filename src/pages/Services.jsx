@@ -23,13 +23,17 @@ import {
   Play,
   Film,
   Award,
-  Users
+  Users,
+  AlertCircle
 } from 'lucide-react';
+import { submitEnquiry } from '../utils/api';
 import './Pages.css';
 
 export default function Services({ initialServiceId = null, setCurrentPage }) {
   const { locale, t } = useLanguage();
   const [activeServiceId, setActiveServiceId] = useState(initialServiceId);
+  const [miniForm, setMiniForm] = useState({ name: '', email: '', phone: '' });
+  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   // Sync state if initialServiceId changes
   useEffect(() => {
@@ -67,6 +71,27 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
   const handleBackToList = () => {
     setActiveServiceId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleMiniSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus('sending');
+    try {
+      await submitEnquiry({
+        name: miniForm.name,
+        email: miniForm.email,
+        phone: miniForm.phone,
+        service: activeServiceId,
+        message: `Requesting a 1-on-1 strategy audit for the service: ${activeServiceId}.`,
+        source: 'Service Detail Mini-Form'
+      });
+      setSubmitStatus('success');
+      setMiniForm({ name: '', email: '', phone: '' });
+      setTimeout(() => setSubmitStatus('idle'), 8000);
+    } catch (err) {
+      console.error('[Services Mini-Form Error]:', err);
+      setSubmitStatus('error');
+    }
   };
 
   // Detailed single service view
@@ -131,25 +156,60 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
                   <h3>{locale === 'en' ? 'Request Consultation' : 'طلب استشارة الخدمة'}</h3>
                   <p>{locale === 'en' ? 'Schedule a 1-on-1 strategy audit for this service.' : 'احجز جلسة مراجعة استراتيجية مباشرة لهذه الخدمة.'}</p>
                   
-                  <form className="service-mini-form" onSubmit={(e) => {
-                    e.preventDefault();
-                    alert(t('contact.form.success'));
-                    e.target.reset();
-                  }}>
+                  <form className="service-mini-form" onSubmit={handleMiniSubmit}>
                     <div className="form-group">
-                      <input type="text" placeholder={t('contact.form.name')} className="form-control" required />
+                      <input 
+                        type="text" 
+                        placeholder={t('contact.form.name')} 
+                        className="form-control" 
+                        value={miniForm.name}
+                        onChange={(e) => setMiniForm({ ...miniForm, name: e.target.value })}
+                        required 
+                      />
                     </div>
                     <div className="form-group">
-                      <input type="email" placeholder={t('contact.form.email')} className="form-control" required />
+                      <input 
+                        type="email" 
+                        placeholder={t('contact.form.email')} 
+                        className="form-control" 
+                        value={miniForm.email}
+                        onChange={(e) => setMiniForm({ ...miniForm, email: e.target.value })}
+                        required 
+                      />
                     </div>
                     <div className="form-group">
-                      <input type="tel" placeholder={t('contact.form.phone')} className="form-control" required />
+                      <input 
+                        type="tel" 
+                        placeholder={t('contact.form.phone')} 
+                        className="form-control" 
+                        value={miniForm.phone}
+                        onChange={(e) => setMiniForm({ ...miniForm, phone: e.target.value })}
+                        required 
+                      />
                     </div>
-                    <button type="submit" className="btn btn-primary w-100 mt-2">
+                    <button 
+                      type="submit" 
+                      className="btn btn-primary w-100 mt-2"
+                      disabled={submitStatus === 'sending'}
+                    >
                       <PhoneCall size={16} />
-                      <span>{t('cta.primary')}</span>
+                      <span>{submitStatus === 'sending' ? t('contact.form.sending') : t('cta.primary')}</span>
                     </button>
                   </form>
+
+                  {submitStatus === 'success' && (
+                    <div className="form-success-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', borderColor: 'var(--primary)', color: 'var(--text-primary)', fontSize: '0.85rem', padding: '1rem' }}>
+                      <CheckCircle size={18} color="var(--primary)" style={{ flexShrink: 0 }} />
+                      <p style={{ margin: 0, whiteSpace: 'pre-line' }}>{t('contact.form.success')}</p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="form-error-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', borderColor: '#ef4444', color: '#fca5a5', fontSize: '0.85rem', padding: '1rem' }}>
+                      <AlertCircle size={18} color="#ef4444" style={{ flexShrink: 0 }} />
+                      <p style={{ margin: 0 }}>{t('contact.form.error')}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

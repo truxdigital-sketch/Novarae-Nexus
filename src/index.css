@@ -243,6 +243,19 @@ body {
 }
 
 /* Form Styles */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
