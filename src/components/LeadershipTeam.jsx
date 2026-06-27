@@ -18,12 +18,6 @@ export default function LeadershipTeam({ badge, title, subtitle }) {
         ? 'Digital Marketing Professional with 2+ years of GCC experience, specializing in social media marketing, paid advertising, content strategy, and brand growth. Passionate about delivering creative, data-driven marketing solutions that drive measurable results.'
         : 'محترف في التسويق الرقمي مع خبرة تزيد عن عامين في الخليج العربي، متخصص في التسويق عبر وسائل التواصل الاجتماعي، والإعلانات المدفوعة، واستراتيجية المحتوى، ونمو العلامة التجارية. شغوف بتقديم حلول تسويقية إبداعية وقائمة على البيانات تحقق نتائج ملموسة.',
       image: '/dhamin.jpeg'
-    },
-    {
-      name: locale === 'en' ? 'Rami El-Khoury' : 'رامي الخوري',
-      role: locale === 'en' ? 'Creative & Video Director' : 'المدير الإبداعي والفني',
-      desc: locale === 'en' ? 'Award-winning cinematographer shaping visual identities for luxury retail brands in Dubai.' : 'مصور سينمائي حائز على جوائز، يشكل الهويات البصرية لعلامات التجزئة الفاخرة في دبي.',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80'
     }
   ];
 

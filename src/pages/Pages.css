@@ -1393,13 +1393,16 @@
 
 /* Team Grid */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 
 .team-card {
-  padding: 2rem;
+  width: 100%;
+  max-width: 360px;
+  padding: 2.5rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1442,16 +1445,9 @@
   .about-pillars-detailed {
     grid-template-columns: 1fr;
   }
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-@media (max-width: 640px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* --- PRICING PAGE --- */
 .pricing-toggle-container {
