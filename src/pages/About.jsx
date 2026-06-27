@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Cpu, Paintbrush, TrendingUp, Eye, Handshake, MapPin, CheckCircle } from 'lucide-react';
+import { Cpu, Paintbrush, TrendingUp, Eye, Handshake } from 'lucide-react';
 import './Pages.css';
 
 export default function About() {
@@ -42,8 +42,8 @@ export default function About() {
 
       {/* Intro section */}
       <section className="about-intro-section section-padding">
-        <div className="container about-intro-grid">
-          <div className="about-intro-text">
+        <div className="container">
+          <div className="about-intro-content">
             <span className="badge">{t('about.badge')}</span>
             <h1>{t('about.title')}</h1>
             <p className="large-desc">{t('about.description')}</p>
@@ -53,7 +53,7 @@ export default function About() {
                 : 'تأسست نوفاراي نيكسس بمهمة واحدة محددة: القضاء على القوالب التسويقية التقليدية وتوفير قنوات رقمية فاخرة وعالية الأداء. نحن نخدم شركاءنا من العملاء في جميع أنحاء الدولة، بدءاً من المتاجر المحلية المتميزة إلى المجموعات متعددة الجنسيات.'}
             </p>
             
-            <div className="about-metrics glass-panel">
+            <div className="about-metrics glass-panel w-100">
               <div className="metric-item">
                 <span className="metric-num text-gradient">150+</span>
                 <span className="metric-label">{locale === 'en' ? 'Clients Scaled' : 'عميل تم توسيع أعمالهم'}</span>
@@ -65,20 +65,6 @@ export default function About() {
               <div className="metric-item">
                 <span className="metric-num text-gradient">7+</span>
                 <span className="metric-label">{locale === 'en' ? 'Emirates Covered' : 'إمارات نغطيها بالكامل'}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="about-intro-img">
-            <div className="about-img-frame glass-panel">
-              <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
-                alt="Novarae Nexus Office" 
-                className="about-office-image"
-              />
-              <div className="office-tag glass-panel">
-                <MapPin size={16} color="var(--primary)" />
-                <span>{locale === 'en' ? 'Dubai, United Arab Emirates' : 'دبي، الإمارات العربية المتحدة'}</span>
               </div>
             </div>
           </div>

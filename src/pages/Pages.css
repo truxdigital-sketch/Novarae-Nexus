@@ -1344,22 +1344,16 @@
 }
 
 /* --- ABOUT PAGE SPECIALS --- */
-.about-intro-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
+.about-intro-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.about-intro-text {
-  text-align: left;
-}
-
-[dir="rtl"] .about-intro-text {
-  text-align: right;
-}
-
-.about-intro-text h1 {
+.about-intro-content h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-top: 1rem;
@@ -1405,45 +1399,6 @@
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-}
-
-.about-intro-img {
-  display: flex;
-  justify-content: center;
-}
-
-.about-img-frame {
-  position: relative;
-  border-radius: var(--radius-lg);
-  padding: 0.8rem;
-  background: rgba(255, 255, 255, 0.02);
-  width: 100%;
-  max-width: 440px;
-}
-
-.about-office-image {
-  width: 100%;
-  border-radius: var(--radius-md);
-  object-fit: cover;
-  display: block;
-}
-
-.office-tag {
-  position: absolute;
-  bottom: 30px;
-  right: -20px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: var(--radius-full);
-}
-
-[dir="rtl"] .office-tag {
-  right: auto;
-  left: -20px;
 }
 
 .about-pillars-detailed {
@@ -1535,14 +1490,7 @@
 }
 
 @media (max-width: 1024px) {
-  .about-intro-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .about-intro-text {
-    text-align: center;
-  }
-  .about-intro-text h1 {
+  .about-intro-content h1 {
     font-size: 2.5rem;
   }
   .about-pillars-detailed {
