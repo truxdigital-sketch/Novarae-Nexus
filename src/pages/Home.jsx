@@ -46,16 +46,6 @@ export default function Home({ setCurrentPage }) {
     { id: 'event-videography', key: 'event-videography', icon: <Video size={24} /> }
   ];
 
-  const chooseItems = [
-    { key: 'team' },
-    { key: 'data' },
-    { key: 'creative' },
-    { key: 'reporting' },
-    { key: 'delivery' },
-    { key: 'support' },
-    { key: 'expertise' },
-    { key: 'scalable' }
-  ];
 
   const processSteps = [0, 1, 2, 3, 4, 5];
   const faqItems = [0, 1, 2, 3, 4];
@@ -222,26 +212,7 @@ export default function Home({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="why-choose-section section-padding">
-        <div className="container">
-          <div className="section-title-wrapper">
-            <span className="badge">{t('whyChooseUs.badge')}</span>
-            <h2 className="section-title">{t('whyChooseUs.title')}</h2>
-            <p className="section-subtitle">{t('whyChooseUs.subtitle')}</p>
-          </div>
 
-          <div className="why-choose-grid">
-            {chooseItems.map((item) => (
-              <div key={item.key} className="choose-card glass-panel">
-                <div className="choose-bullet"></div>
-                <h3>{t(`whyChooseUs.items.${item.key}.title`)}</h3>
-                <p>{t(`whyChooseUs.items.${item.key}.desc`)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Process Section */}
       <section className="process-section section-padding bg-surface-wrap">

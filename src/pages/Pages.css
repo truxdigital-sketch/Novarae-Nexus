@@ -347,56 +347,7 @@
   }
 }
 
-/* --- WHY CHOOSE US GRID --- */
-.why-choose-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
 
-.choose-card {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  position: relative;
-  text-align: left;
-}
-
-[dir="rtl"] .choose-card {
-  text-align: right;
-}
-
-.choose-bullet {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gradient-primary);
-  margin-bottom: 0.5rem;
-}
-
-.choose-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.choose-card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 1024px) {
-  .why-choose-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .why-choose-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* --- PROCESS TIMELINE --- */
 .process-timeline {
