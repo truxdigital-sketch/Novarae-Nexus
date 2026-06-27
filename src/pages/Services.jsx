@@ -186,7 +186,6 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
                 <div className="svc-content-box">
                   <h3>{t(`services.items.${svc.id}.title`)}</h3>
                   <p>{t(`services.items.${svc.id}.shortDesc`)}</p>
-                  <span className="svc-metric-text text-gradient">{t(`services.items.${svc.id}.stat`)}</span>
                 </div>
               </div>
             ))}

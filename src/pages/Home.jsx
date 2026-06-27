@@ -11,7 +11,14 @@ import {
   Handshake, 
   ChevronDown, 
   ChevronUp, 
-  Sparkles
+  Sparkles,
+  Share2,
+  Target,
+  Search,
+  LineChart,
+  Monitor,
+  Camera,
+  Video
 } from 'lucide-react';
 import LeadershipTeam from '../components/LeadershipTeam';
 import './Pages.css';
@@ -29,14 +36,14 @@ export default function Home({ setCurrentPage }) {
   ];
 
   const featuredServices = [
-    { id: 'digital-marketing', key: 'digital-marketing' },
-    { id: 'social-media', key: 'social-media' },
-    { id: 'meta-ads', key: 'meta-ads' },
-    { id: 'google-ads', key: 'google-ads' },
-    { id: 'seo', key: 'seo' },
-    { id: 'web-design', key: 'web-design' },
-    { id: 'event-photography', key: 'event-photography' },
-    { id: 'event-videography', key: 'event-videography' }
+    { id: 'digital-marketing', key: 'digital-marketing', icon: <TrendingUp size={24} /> },
+    { id: 'social-media', key: 'social-media', icon: <Share2 size={24} /> },
+    { id: 'meta-ads', key: 'meta-ads', icon: <Target size={24} /> },
+    { id: 'google-ads', key: 'google-ads', icon: <Search size={24} /> },
+    { id: 'seo', key: 'seo', icon: <LineChart size={24} /> },
+    { id: 'web-design', key: 'web-design', icon: <Monitor size={24} /> },
+    { id: 'event-photography', key: 'event-photography', icon: <Camera size={24} /> },
+    { id: 'event-videography', key: 'event-videography', icon: <Video size={24} /> }
   ];
 
   const chooseItems = [
@@ -185,8 +192,8 @@ export default function Home({ setCurrentPage }) {
           <div className="services-grid">
             {featuredServices.map((svc) => (
               <div key={svc.id} className="service-card glass-panel glass-panel-interactive">
-                <div className="svc-header">
-                  <span className="svc-stat">{t(`services.items.${svc.key}.stat`)}</span>
+                <div className="svc-icon-box" style={{ width: 'fit-content', marginBottom: '0.5rem' }}>
+                  {svc.icon}
                 </div>
                 <h3>{t(`services.items.${svc.key}.title`)}</h3>
                 <p>{t(`services.items.${svc.key}.shortDesc`)}</p>
