@@ -453,9 +453,9 @@ export const translations = {
     contact: {
       title: "Let's Ignite Your Growth",
       subtitle: "Visit our office in Dubai, send us a message, or request a quick callback.",
-      phone: "+971 4 000 0000",
-      email: "growth@novaraenexus.ae",
-      address: "Marina Plaza, Level 28, Dubai Marina, Dubai, UAE",
+      phone: "+971 54 271 3775",
+      email: "novaraenexus@gmail.com",
+      address: "Dubai, United Arab Emirates",
       form: {
         name: "Full Name",
         email: "Work Email",
@@ -524,10 +524,10 @@ export const translations = {
       title: "We are looking for creative rebels",
       subtitle: "Work with elite UAE clients and define the next era of digital marketing in Dubai.",
       openings: [
-        { title: "Senior Performance Marketer", type: "Full-Time", location: "Dubai Marina", dept: "Paid Media" },
-        { title: "Creative Videographer & Editor", type: "Full-Time", location: "Dubai Marina", dept: "Media Production" },
+        { title: "Senior Performance Marketer", type: "Full-Time", location: "Dubai, United Arab Emirates", dept: "Paid Media" },
+        { title: "Creative Videographer & Editor", type: "Full-Time", location: "Dubai, United Arab Emirates", dept: "Media Production" },
         { title: "Senior UI/UX & Web Designer", type: "Full-Time / Remote", location: "Hybrid (UAE)", dept: "Design" },
-        { title: "Bilingual Copywriter (Arabic/English)", type: "Full-Time", location: "Dubai Marina", dept: "Copywriting" }
+        { title: "Bilingual Copywriter (Arabic/English)", type: "Full-Time", location: "Dubai, United Arab Emirates", dept: "Copywriting" }
       ],
       apply: "Apply Now",
       modal: {
@@ -1046,9 +1046,9 @@ export const translations = {
     contact: {
       title: "دعنا نشعل شرارة نموك الرقمي",
       subtitle: "تفضل بزيارة مكتبنا في دبي، أو أرسل لنا رسالة، أو اطلب اتصالاً سريعاً من فريقنا.",
-      phone: "+971 4 000 0000",
-      email: "growth@novaraenexus.ae",
-      address: "مارينا بلازا، الطابق 28، دبي مارينا، دبي، الإمارات العربية المتحدة",
+      phone: "+971 54 271 3775",
+      email: "novaraenexus@gmail.com",
+      address: "دبي، الإمارات العربية المتحدة",
       form: {
         name: "الاسم الكامل",
         email: "البريد الإلكتروني للعمل",
@@ -1117,10 +1117,10 @@ export const translations = {
       title: "نحن نبحث عن المبدعين والمتمردين",
       subtitle: "اعمل مع نخبة من عملاء الإمارات وحدد الملامح القادمة للتسويق الرقمي في دبي.",
       openings: [
-        { title: "مدير حملات أداء أول (إعلانات)", type: "دوام كامل", location: "دبي مارينا", dept: "الإعلانات المدفوعة" },
-        { title: "مصور ومحرر فيديو إبداعي", type: "دوام كامل", location: "دبي مارينا", dept: "إنتاج الوسائط" },
+        { title: "مدير حملات أداء أول (إعلانات)", type: "دوام كامل", location: "دبي، الإمارات العربية المتحدة", dept: "الإعلانات المدفوعة" },
+        { title: "مصور ومحرر فيديو إبداعي", type: "دوام كامل", location: "دبي، الإمارات العربية المتحدة", dept: "إنتاج الوسائط" },
         { title: "مصمم أول لواجهات المستخدم وتصميم الويب", type: "دوام كامل / هجين", location: "الإمارات (هجين)", dept: "التصميم" },
-        { title: "كاتب محتوى إبداعي ثنائي اللغة (عربي/إنجليزي)", type: "دوام كامل", location: "دبي مارينا", dept: "كتابة المحتوى" }
+        { title: "كاتب محتوى إبداعي ثنائي اللغة (عربي/إنجليزي)", type: "دوام كامل", location: "دبي، الإمارات العربية المتحدة", dept: "كتابة المحتوى" }
       ],
       apply: "قدّم الآن",
       modal: {

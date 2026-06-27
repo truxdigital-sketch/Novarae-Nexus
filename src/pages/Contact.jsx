@@ -82,7 +82,7 @@ export default function Contact() {
                 <div className="ping-effect"></div>
                 <div className="pin-dot"></div>
               </div>
-              <span className="map-label">Marina Plaza, Dubai Marina</span>
+              <span className="map-label">{locale === 'en' ? 'Dubai, United Arab Emirates' : 'دبي، الإمارات العربية المتحدة'}</span>
             </div>
           </div>
 

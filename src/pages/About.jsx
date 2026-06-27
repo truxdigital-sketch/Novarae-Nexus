@@ -78,7 +78,7 @@ export default function About() {
               />
               <div className="office-tag glass-panel">
                 <MapPin size={16} color="var(--primary)" />
-                <span>{locale === 'en' ? 'Dubai Marina Workspace' : 'مقر العمل في دبي مارينا'}</span>
+                <span>{locale === 'en' ? 'Dubai, United Arab Emirates' : 'دبي، الإمارات العربية المتحدة'}</span>
               </div>
             </div>
           </div>

@@ -42,8 +42,8 @@ export default function Legal({ documentType }) {
                   <h2>4. {locale === 'en' ? 'Contact Us' : '٤. اتصل بنا'}</h2>
                   <p>
                     {locale === 'en'
-                      ? 'If you have any questions regarding this Privacy Policy, please email us at privacy@novaraenexus.ae'
-                      : 'إذا كانت لديك أي أسئلة بخصوص سياسة الخصوصية هذه، يرجى مراسلتنا عبر البريد الإلكتروني: privacy@novaraenexus.ae'}
+                      ? 'If you have any questions regarding this Privacy Policy, please email us at novaraenexus@gmail.com'
+                      : 'إذا كانت لديك أي أسئلة بخصوص سياسة الخصوصية هذه، يرجى مراسلتنا عبر البريد الإلكتروني: novaraenexus@gmail.com'}
                   </p>
                 </div>
               </>

@@ -542,9 +542,8 @@ export default function Portal() {
                 <div className="party-box">
                   <h4>{locale === 'en' ? 'From:' : 'من:'}</h4>
                   <p><strong>Novarae Nexus Digital</strong></p>
-                  <p>Marina Plaza, Level 28</p>
-                  <p>Dubai Marina, Dubai, UAE</p>
-                  <p>growth@novaraenexus.ae</p>
+                  <p>Dubai, United Arab Emirates</p>
+                  <p>novaraenexus@gmail.com</p>
                 </div>
                 <div className="party-box">
                   <h4>{locale === 'en' ? 'To:' : 'إلى:'}</h4>
@@ -673,7 +672,7 @@ export default function Portal() {
                 </p>
               </div>
               <div className="email-footer-banner mt-4">
-                <p>&copy; {new Date().getFullYear()} Novarae Nexus UAE. Marina Plaza Level 28, Dubai Marina, Dubai.</p>
+                <p>&copy; {new Date().getFullYear()} Novarae Nexus UAE. Dubai, United Arab Emirates.</p>
               </div>
             </div>
           </div>
