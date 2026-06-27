@@ -131,6 +131,15 @@ export default function Home({ setCurrentPage }) {
 
 
 
+      {/* Leadership Team Section */}
+      <LeadershipTeam 
+        badge={locale === 'en' ? 'OUR LEADERSHIP' : 'قيادتنا'}
+        title={locale === 'en' ? 'Leadership Team' : 'فريق القيادة'}
+        subtitle={locale === 'en' 
+          ? 'Meet the professionals driving Novarae Nexus with creativity, innovation, and strategic digital excellence across the UAE.'
+          : 'تعرف على المهنيين الذين يقودون نوفاراي نيكسس بالإبداع والابتكار والتميز الرقمي الاستراتيجي في جميع أنحاء الإمارات.'}
+      />
+
       {/* About Teaser Section */}
       <section className="about-teaser-section section-padding">
         <div className="container">
@@ -160,15 +169,6 @@ export default function Home({ setCurrentPage }) {
           </div>
         </div>
       </section>
-
-      {/* Leadership Team Section */}
-      <LeadershipTeam 
-        badge={locale === 'en' ? 'OUR LEADERSHIP' : 'قيادتنا'}
-        title={locale === 'en' ? 'Leadership Team' : 'فريق القيادة'}
-        subtitle={locale === 'en' 
-          ? 'Meet the professionals driving Novarae Nexus with creativity, innovation, and strategic digital excellence across the UAE.'
-          : 'تعرف على المهنيين الذين يقودون نوفاراي نيكسس بالإبداع والابتكار والتميز الرقمي الاستراتيجي في جميع أنحاء الإمارات.'}
-      />
 
       {/* Services Section */}
       <section className="services-section section-padding bg-surface-wrap">
