@@ -11,9 +11,7 @@ import {
   Handshake, 
   ChevronDown, 
   ChevronUp, 
-  ShieldCheck, 
-  Sparkles,
-  Award
+  Sparkles
 } from 'lucide-react';
 import './Pages.css';
 
@@ -133,27 +131,7 @@ export default function Home({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* Trusted By Ticker */}
-      <section className="trusted-section">
-        <div className="container">
-          <p className="trusted-title">{t('trustedBy.title')}</p>
-          <div className="ticker-wrapper">
-            <div className="ticker-track">
-              {/* Loop twice for seamless scrolling */}
-              {[1, 2].map((loopIdx) => (
-                <div key={loopIdx} className="ticker-group">
-                  <span className="ticker-item"><Award size={16} /> {t('trustedBy.brands.dubai')}</span>
-                  <span className="ticker-item"><ShieldCheck size={16} /> {t('trustedBy.brands.abudhabi')}</span>
-                  <span className="ticker-item"><Sparkles size={16} /> {t('trustedBy.brands.emaar')}</span>
-                  <span className="ticker-item"><Award size={16} /> {t('trustedBy.brands.nakheel')}</span>
-                  <span className="ticker-item"><ShieldCheck size={16} /> {t('trustedBy.brands.alshaya')}</span>
-                  <span className="ticker-item"><Sparkles size={16} /> {t('trustedBy.brands.alkhaleej')}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* About Teaser Section */}
       <section className="about-teaser-section section-padding">

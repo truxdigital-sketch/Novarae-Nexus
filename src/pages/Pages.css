@@ -202,68 +202,7 @@
   }
 }
 
-/* --- TRUSTED BY TICKER --- */
-.trusted-section {
-  padding: 3rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(18, 18, 28, 0.2);
-}
 
-.trusted-title {
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-}
-
-.ticker-wrapper {
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: scrollTicker 30s linear infinite;
-}
-
-[dir="rtl"] .ticker-track {
-  animation: scrollTickerRTL 30s linear infinite;
-}
-
-.ticker-group {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  padding-right: 4rem;
-}
-
-.ticker-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-@keyframes scrollTicker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes scrollTickerRTL {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
-}
 
 /* --- PILLARS GRID (ABOUT TEASER) --- */
 .pillars-grid {
