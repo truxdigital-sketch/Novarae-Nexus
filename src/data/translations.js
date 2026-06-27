@@ -289,87 +289,27 @@ export const translations = {
       subtitle: "A showcase of high-end campaigns, digital platforms, and brand identities across the UAE.",
       all: "All Projects",
       categories: {
-        "event-photo": "Event Photography",
-        "event-video": "Event Videography",
-        "interview": "Interview & Testimonial",
-        "reels": "Social Media Reels",
-        "highlights": "Highlight Videos",
-        "group-photo": "Group Photography",
-        "awards": "Award Ceremony",
-        "corporate-events": "Corporate Events",
-        "product-photo": "Product Photography",
-        "brand-content": "Brand Content"
+        "event-coverage": "Event Coverage"
       },
       items: [
         {
-          title: "GCC Tech Summit Coverage",
-          client: "DTEC Dubai",
-          category: "event-photo",
-          desc: "Professional event coverage capturing every speaker and panelist session.",
-          image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Luxury Yacht Launch Film",
-          client: "Gulf Craft",
-          category: "event-video",
-          desc: "Cinematic promotional launch video with professional editing and drone coverage.",
-          image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Executive Trust Testimonials",
-          client: "Vanguard Capital",
-          category: "interview",
-          desc: "Professionally filmed client interviews highlighting multi-million dollar portfolios.",
-          image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Aesthetic Lifestyle Reels",
-          client: "Nura Cosmetics",
-          category: "reels",
-          desc: "Engaging vertical videos optimized for Instagram, TikTok, and YouTube Shorts.",
-          image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Formula 1 Grand Prix Recap",
-          client: "Yas Marina Circuit",
-          category: "highlights",
-          desc: "Dynamic recap video showcasing the best high-speed moments on and off track.",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Corporate Team & Board Portraits",
-          client: "Emaar Properties",
-          category: "group-photo",
-          desc: "Professional executive group portraits for the annual financial report.",
-          image: "https://images.unsplash.com/photo-1556761175-b813d53a362e?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "UAE Business Excellence Awards",
-          client: "Dubai Chamber",
-          category: "awards",
-          desc: "Professional stage award presentations and official group VIP portraits.",
-          image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Annual Leadership Forum",
-          client: "Adnoc Group",
-          category: "corporate-events",
-          desc: "Bespoke media coverage for ADNOC's global executive leadership retreat.",
-          image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Premium Perfume Bottle Stills",
-          client: "Oud Royale Dubai",
-          category: "product-photo",
-          desc: "Luxury studio product photography for high-end Arabian perfume bottles.",
-          image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Social Media Identity Campaign",
-          client: "Residences Marina",
-          category: "brand-content",
-          desc: "Curated lifestyle content and campaign creation for luxury marina-front living.",
-          image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+          title: "Event Photography & Videography",
+          client: "OMF Academy Karate & Kick Boxing",
+          category: "event-coverage",
+          desc: "Delivered professional event photography and cinematic videography for OMF Academy Karate & Kick Boxing, capturing competitions, award ceremonies, group moments, action highlights, and promotional content. The project focused on creating high-quality visual content for social media, marketing, and brand promotion.",
+          image: "/event1.jpeg",
+          challenge: "OMF Academy needed high-quality visual assets to showcase the scale, discipline, and energy of their martial arts events for digital branding and enrollment campaigns.",
+          solution: "We deployed our multi-specialist creative crew to provide end-to-end coverage, including active competition action photography, award ceremonies, group portraits, and custom-edited highlight reels.",
+          result: "7+ Deliverables Completed",
+          services: [
+            "Event Photography",
+            "Event Videography",
+            "Award Ceremony Coverage",
+            "Group Photography",
+            "Action Photography",
+            "Highlight Video Production",
+            "Social Media Content"
+          ]
         }
       ]
     },
@@ -898,87 +838,27 @@ export const translations = {
       subtitle: "معرض يعرض حملات إعلانية متكاملة، منصات ويب فاخرة، وهويات تجارية متميزة في الإمارات.",
       all: "جميع المشاريع",
       categories: {
-        "event-photo": "التصوير الفوتوغرافي للفعاليات",
-        "event-video": "تصوير الفيديو للفعاليات",
-        "interview": "المقابلات وآراء العملاء",
-        "reels": "فيديوهات الريلز القصيرة",
-        "highlights": "الفيديوهات الملخصة",
-        "group-photo": "التصوير الجماعي",
-        "awards": "حفلات التكريم والجوائز",
-        "corporate-events": "الفعاليات المؤسسية",
-        "product-photo": "تصوير المنتجات",
-        "brand-content": "محتوى العلامة التجارية"
+        "event-coverage": "تغطية الفعاليات"
       },
       items: [
         {
-          title: "تغطية قمة الخليج للتكنولوجيا",
-          client: "ديتك دبي",
-          category: "event-photo",
-          desc: "تغطية احترافية للفعاليات تلتقط جلسات المتحدثين وأعضاء لجنة التحكيم.",
-          image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "فيلم إطلاق اليخوت الفاخرة",
-          client: "جلف كرافت",
-          category: "event-video",
-          desc: "فيديو ترويجي سينمائي لإطلاق اليخت مع مونتاج احترافي وتغطية جوية.",
-          image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "شهادات العملاء التنفيذية",
-          client: "فانغارد كابيتال",
-          category: "interview",
-          desc: "مقابلات مصورة باحترافية تسلط الضوء على المحافظ الاستثمارية الفاخرة.",
-          image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "مقاطع ريلز لنمط الحياة البهيج",
-          client: "مستحضرات تجميل نورا",
-          category: "reels",
-          desc: "مقاطع ريلز تفاعلية ومحسنة لمنصات إنستغرام وتيك توك ويوتيوب.",
-          image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "ملخص سباق فورمولا 1 أبوظبي",
-          client: "حلبة مرسى ياس",
-          category: "highlights",
-          desc: "فيديو ملخص تفاعلي يبرز اللحظات المثيرة والسرعات العالية على المضمار وخارجه.",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "بورتريهات مجلس الإدارة وفريق العمل",
-          client: "إعمار العقارية",
-          category: "group-photo",
-          desc: "صور جماعية احترافية لأعضاء مجلس الإدارة لتقرير النتائج السنوي.",
-          image: "https://images.unsplash.com/photo-1556761175-b813d53a362e?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "جوائز التميز لقطاع الأعمال",
-          client: "غرفة دبي",
-          category: "awards",
-          desc: "تغطية تسليم الجوائز على المسرح وصور جماعية لكبار الشخصيات والمسؤولين.",
-          image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "منتدى القيادة السنوي لقادة النفط",
-          client: "مجموعة أدنوك",
-          category: "corporate-events",
-          desc: "تغطية إعلامية متكاملة لملتقى ADNOC السنوي المغلق للقيادات العالمية.",
-          image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "لقطات فاخرة لزجاجات العطور",
-          client: "عود رويال دبي",
-          category: "product-photo",
-          desc: "تصوير منتجات استوديو احترافي لزجاجات العطور العربية الراقية.",
-          image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "حملة الهوية البصرية لنمط المعيشة",
-          client: "شقق مارينا السكنية",
-          category: "brand-content",
-          desc: "صناعة محتوى ترويجي وبصري متكامل لجذب السكان للمشروع الفاخر الجديد.",
-          image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+          title: "التصوير الفوتوغرافي والفيديو للفعاليات",
+          client: "أكاديمية OMF للكاراتيه والكيك بوكسينغ",
+          category: "event-coverage",
+          desc: "تقديم تغطية تصوير فوتوغرافي احترافي وفيديو سينمائي لأكاديمية OMF للكاراتيه والكيك بوكسينغ، لالتقاط المنافسات، وحفلات توزيع الجوائز، واللحظات الجماعية، وأبرز لقطات الحركة، والمحتوى الترويجي. ركز المشروع على إنشاء محتوى مرئي عالي الجودة لوسائل التواصل الاجتماعي والتسويق والترويج للعلامة التجارية.",
+          image: "/event1.jpeg",
+          challenge: "احتاجت أكاديمية OMF إلى أصول مرئية عالية الجودة لإبراز حجم ومستوى الطاقة والانضباط في فعالياتها الرياضية لاستخدامها في التسويق الرقمي وحملات التسجيل.",
+          solution: "قمنا بنشر فريقنا الإبداعي المتخصص لتوفير تغطية شاملة تشمل تصوير لقطات الحركة والنزالات، وحفلات توزيع الجوائز، والصور الجماعية، وإنتاج فيديوهات ريلز ملخصة.",
+          result: "إكمال أكثر من 7 مخرجات",
+          services: [
+            "تغطية تصوير الفعاليات",
+            "تصوير فيديو الفعاليات",
+            "تغطية حفلات التتويج",
+            "التصوير الجماعي",
+            "تصوير الحركة السريع",
+            "إنتاج فيديو الملخصات",
+            "محتوى وسائل التواصل"
+          ]
         }
       ]
     },

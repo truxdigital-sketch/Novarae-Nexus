@@ -596,13 +596,16 @@
 
 .portfolio-grid,
 .portfolio-teaser-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .portfolio-card,
 .portfolio-teaser-card {
+  width: 100%;
+  max-width: 380px;
   padding: 0;
   overflow: hidden;
   display: flex;
@@ -701,19 +704,7 @@
   line-height: 1.5;
 }
 
-@media (max-width: 1024px) {
-  .portfolio-grid,
-  .portfolio-teaser-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 640px) {
-  .portfolio-grid,
-  .portfolio-teaser-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* --- CASE STUDY MODAL LIGHTBOX --- */
 .case-study-modal-backdrop {
