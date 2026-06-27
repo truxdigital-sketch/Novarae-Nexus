@@ -6,16 +6,18 @@ export default function LeadershipTeam({ badge, title, subtitle }) {
 
   const team = [
     {
-      name: locale === 'en' ? 'Hassan Al-Mansoori' : 'حسن المنصوري',
-      role: locale === 'en' ? 'Founder & Managing Director' : 'المؤسس والمدير التنفيذي',
-      desc: locale === 'en' ? 'Ex-corporate strategist with 12+ years of GCC market experience helping top brands scale.' : 'مستشار استراتيجي سابق للشركات مع خبرة تزيد عن 12 عاماً في السوق الخليجي لمساعدة العلامات الكبرى.',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80'
+      name: locale === 'en' ? 'Raees Abdullah' : 'رئيس عبد الله',
+      role: locale === 'en' ? 'Founder & CEO' : 'المؤسس والرئيس التنفيذي',
+      desc: '',
+      image: '/raees.jpeg'
     },
     {
-      name: locale === 'en' ? 'Sarah Jenkins' : 'سارة جينكينز',
-      role: locale === 'en' ? 'Head of SEO & Search' : 'مديرة قسم السيو والبحث',
-      desc: locale === 'en' ? 'Technical SEO mastermind specializing in GCC search algorithms and local indexing optimization.' : 'خبيرة السيو التقني المتخصصة في خوارزميات محركات البحث المحلية في الخليج العربي.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80'
+      name: locale === 'en' ? 'Dhamin Mudassir A V' : 'ضامن مدثر أ. ف',
+      role: locale === 'en' ? 'Managing Director & Creative Director' : 'العضو المنتدب والمدير الإبداعي',
+      desc: locale === 'en'
+        ? 'Digital Marketing Professional with 2+ years of GCC experience, specializing in social media marketing, paid advertising, content strategy, and brand growth. Passionate about delivering creative, data-driven marketing solutions that drive measurable results.'
+        : 'محترف في التسويق الرقمي مع خبرة تزيد عن عامين في الخليج العربي، متخصص في التسويق عبر وسائل التواصل الاجتماعي، والإعلانات المدفوعة، واستراتيجية المحتوى، ونمو العلامة التجارية. شغوف بتقديم حلول تسويقية إبداعية وقائمة على البيانات تحقق نتائج ملموسة.',
+      image: '/dhamin.jpeg'
     },
     {
       name: locale === 'en' ? 'Rami El-Khoury' : 'رامي الخوري',
