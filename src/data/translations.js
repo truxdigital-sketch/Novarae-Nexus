@@ -468,55 +468,71 @@ export const translations = {
       }
     },
     pricing: {
-      badge: "Pricing Models",
-      title: "Transparent Investments for Scale",
-      subtitle: "Tailored monthly retainers and project plans based on actual metrics and scope.",
+      badge: "Pricing Plans",
+      title: "Social Media Retainers",
+      subtitle: "Transparent packages designed for maximum engagement and brand growth in the UAE.",
       plans: {
+        basic: {
+          name: "Basic Package",
+          price: "AED 1,999",
+          period: "Month",
+          desc: "Ideal for startups and small businesses looking to establish a professional online presence.",
+          features: [
+            "8 Professional Social Media Posts",
+            "2 High-Quality Reels",
+            "Management of 1 Social Media Account",
+            "Profile & Bio Optimization",
+            "Monthly Performance Report",
+            "Professional Captions & Hashtag Research",
+            "Content Publishing & Scheduling"
+          ],
+          cta: "Get Started"
+        },
         growth: {
-          name: "Growth Engine",
-          price: "AED 5,900",
-          period: "month",
-          desc: "Perfect for local retail, cafes, or dental clinics starting digital scaling.",
+          name: "Growth Package",
+          price: "AED 3,499",
+          period: "Month",
+          desc: "Designed for growing businesses that need consistent content and stronger audience engagement.",
           features: [
-            "Bespoke Social Media (12 Posts)",
-            "Meta & Google Campaign Setup",
-            "Up to AED 10k monthly ad spend management",
-            "Basic Local SEO citation setup",
-            "Standard Live Dashboard reporting",
-            "WhatsApp & Email support"
-          ]
+            "12 Professional Social Media Posts",
+            "4 High-Quality Reels",
+            "Management of up to 3 Social Media Accounts",
+            "Profile & Bio Optimization",
+            "Advanced Monthly Performance Report",
+            "Limited Meta Ad Management",
+            "Monthly Content Calendar",
+            "Basic Community Engagement",
+            "Professional Captions & Hashtag Research",
+            "Content Publishing & Scheduling"
+          ],
+          cta: "Choose Growth"
         },
-        scale: {
-          name: "Nexus Premium",
-          price: "AED 9,500",
-          period: "month",
-          desc: "Perfect for scaling real estate companies, corporate brands, and e-com stores.",
+        elite: {
+          name: "Elite Package",
+          price: "AED 5,199",
+          period: "Month",
+          desc: "A complete digital marketing solution for businesses that want maximum online growth and brand authority.",
           features: [
-            "Advanced Social Media (20 Posts + Reels)",
-            "Omnichannel Ad management (Meta, Google, TikTok)",
-            "Up to AED 30k monthly ad spend management",
-            "Full Technical & Local SEO optimization",
-            "2 Cinematic Video Reels per month",
-            "Custom Live Dashboard + Monthly Audits",
-            "Dedicated Account Director Support"
-          ]
-        },
-        enterprise: {
-          name: "Elite Enterprise",
-          price: "AED 18,500",
-          period: "month",
-          desc: "Complete digital dominance for major retail, luxury brands, or hotels.",
-          features: [
-            "Full Omnichannel Digital Strategy",
-            "Unlimited Managed Ad Spend",
-            "Custom headless landing page design",
-            "Weekly Video Reels and high-end media creation",
-            "Enterprise SEO + PR backlink outreach",
-            "Dedicated Creative designer & Video specialist",
-            "Bi-weekly alignment meetings",
-            "Strategic C-Suite consultations"
-          ]
+            "16 Professional Social Media Posts",
+            "6 High-Quality Reels",
+            "Unlimited Social Media Account Management",
+            "Weekly Performance Reports",
+            "Unlimited Meta Ad Management",
+            "Complete Social Media Strategy",
+            "Competitor Research & Analysis",
+            "Priority Support",
+            "Influencer Marketing Campaign Management",
+            "Google Business Profile Setup",
+            "Professional Captions & Hashtag Research",
+            "Content Publishing & Scheduling"
+          ],
+          cta: "Contact Sales"
         }
+      },
+      custom: {
+        title: "Need a Custom Marketing Plan?",
+        desc: "Every business is unique. We create customized digital marketing packages based on your industry, business goals, content requirements, advertising budget, and growth objectives.",
+        cta: "Request a Custom Quote"
       }
     },
     careers: {
@@ -1062,54 +1078,70 @@ export const translations = {
     },
     pricing: {
       badge: "باقات الأسعار",
-      title: "استثمارات شفافة وواضحة للنمو",
-      subtitle: "اشتراكات شهرية وخطط تنفيذية مبنية على الأهداف وحجم نطاق العمل الفعلي.",
+      title: "باقات إدارة وسائل التواصل الاجتماعي",
+      subtitle: "باقات شفافة مصممة للتفاعل الأقصى ونمو العلامة التجارية في دولة الإمارات.",
       plans: {
+        basic: {
+          name: "الباقة الأساسية",
+          price: "1,999 د.إ",
+          period: "شهرياً",
+          desc: "مثالية للشركات الناشئة والمشاريع الصغيرة التي تتطلع إلى بناء حضور احترافي على الإنترنت.",
+          features: [
+            "8 منشورات احترافية لوسائل التواصل",
+            "ريلز (مقطعي فيديو) عالية الجودة",
+            "إدارة حساب واحد للتواصل الاجتماعي",
+            "تهيئة وتحسين الملف الشخصي والسيرة الذاتية",
+            "تقرير أداء شهري",
+            "كتابة نصوص احترافية والبحث عن الهاشتاجات",
+            "نشر وتنسيق وجدولة المحتوى"
+          ],
+          cta: "ابدأ الآن"
+        },
         growth: {
           name: "باقة النمو",
-          price: "5,900 د.إ",
+          price: "3,499 د.إ",
           period: "شهرياً",
-          desc: "مثالية للمحلات المحلية، المقاهي، أو العيادات التي تبدأ في التوسع الرقمي.",
+          desc: "مصممة للشركات النامية التي تحتاج إلى محتوى مستمر وتفاعل أقوى مع الجمهور.",
           features: [
-            "إدارة التواصل الاجتماعي (12 منشور)",
-            "إعداد حملات إعلانات جوجل وميتا",
-            "إدارة إنفاق إعلاني يصل إلى 10 آلاف درهم شهرياً",
-            "تهيئة الملفات المحلية والظهور في الخرائط",
-            "لوحة تحكم تفاعلية قياسية لمتابعة النتائج",
-            "دعم فني عبر البريد الإلكتروني وواتساب"
-          ]
+            "12 منشوراً احترافياً لوسائل التواصل",
+            "4 فيديوهات ريلز عالية الجودة",
+            "إدارة ما يصل إلى 3 حسابات تواصل اجتماعي",
+            "تهيئة وتحسين الملف الشخصي والسيرة الذاتية",
+            "تقرير أداء شهري متقدم",
+            "إدارة محدودة لإعلانات ميتا (Meta)",
+            "جدول زمني شهري للمحتوى",
+            "تفاعل أساسي مع المجتمع والجمهور",
+            "كتابة نصوص احترافية والبحث عن الهاشتاجات",
+            "نشر وتنسيق وجدولة المحتوى"
+          ],
+          cta: "اختر باقة النمو"
         },
-        scale: {
-          name: "باقة نيكسس المميزة",
-          price: "9,500 د.إ",
+        elite: {
+          name: "باقة النخبة",
+          price: "5,199 د.إ",
           period: "شهرياً",
-          desc: "مثالية لشركات العقارات الطموحة، المتاجر الكبرى، والشركات المتوسطة.",
+          desc: "حل تسويق رقمي متكامل للشركات التي تريد تحقيق أقصى درجات النمو والريادة لعلامتها التجارية.",
           features: [
-            "إدارة تواصل متقدمة (20 منشور شامل الفيديوهات)",
-            "إدارة إعلانات متعددة القنوات (ميتا، جوجل، تيك توك)",
-            "إدارة إنفاق إعلاني يصل إلى 30 ألف درهم شهرياً",
-            "تحسين كامل ومتقدم للسيو المحلي والتقني SEO",
-            "إنتاج مقطعين فيديو ريلز سينمائي شهرياً",
-            "لوحة تحكم مخصصة ومباشرة + مراجعة شهرية",
-            "مدير حساب مخصص وتواصل مباشر"
-          ]
-        },
-        enterprise: {
-          name: "باقة النخبة للمؤسسات",
-          price: "18,500 د.إ",
-          period: "شهرياً",
-          desc: "سيطرة رقمية كاملة وشاملة للمؤسسات الكبرى، الفنادق، والعلامات الفاخرة.",
-          features: [
-            "استراتيجية تسويق رقمية شاملة ومتكاملة القنوات",
-            "إدارة حجم إنفاق إعلاني غير محدود",
-            "تصميم وبرمجة صفحات هبوط مخصصة ومبتكرة",
-            "إنتاج فيديوهات ريلز ومواد دعائية أسبوعية",
-            "خدمات سيو للمؤسسات وعلاقات عامة لبناء الروابط",
-            "مصمم ومصور فيديو مخصص لخدمة علامتك",
-            "اجتماعات دورية ثنائية لمتابعة الخطط والتطوير",
-            "استشارات استراتيجية مباشرة مع الإدارة التنفيذية"
-          ]
+            "16 منشوراً احترافياً لوسائل التواصل",
+            "6 فيديوهات ريلز عالية الجودة",
+            "إدارة عدد غير محدود من حسابات التواصل الاجتماعي",
+            "تقارير أداء أسبوعية",
+            "إدارة غير محدودة لإعلانات ميتا (Meta)",
+            "استراتيجية تسويق كاملة لوسائل التواصل",
+            "تحليل وبحث المنافسين",
+            "دعم فني ذو أولوية",
+            "إدارة حملات التسويق عبر المؤثرين",
+            "إعداد وتهيئة الملف التجاري على جوجل",
+            "كتابة نصوص احترافية والبحث عن الهاشتاجات",
+            "نشر وتنسيق وجدولة المحتوى"
+          ],
+          cta: "اتصل بالمبيعات"
         }
+      },
+      custom: {
+        title: "هل تحتاج إلى خطة تسويقية مخصصة؟",
+        desc: "كل نشاط تجاري فريد من نوعه. نحن نصمم باقات تسويق رقمي مخصصة بناءً على قطاع عملك، وأهدافك التجارية، ومتطلبات المحتوى، وميزانية الإعلانات، وتطلعات النمو الخاصة بك.",
+        cta: "اطلب اقتباس سعر مخصص"
       }
     },
     careers: {
