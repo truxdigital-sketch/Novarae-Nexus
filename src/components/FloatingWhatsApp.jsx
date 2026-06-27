@@ -5,12 +5,8 @@ import './FloatingWhatsApp.css';
 export default function FloatingWhatsApp() {
   const { locale } = useLanguage();
 
-  const phoneNumber = '971542713775'; // Novarae Nexus Business WhatsApp number
-  const messageEn = 'Hello Novarae Nexus, I am visiting your website and would like to schedule a free digital growth consultation.';
-  const messageAr = 'مرحباً نوفاراي نيكسس، أنا أزور موقعكم الإلكتروني وأود حجز استشارة مجانية للنمو الرقمي.';
-  
-  const activeMessage = locale === 'ar' ? messageAr : messageEn;
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(activeMessage)}`;
+
+  const whatsappUrl = 'https://wa.me/971542713775';
 
   return (
     <a
