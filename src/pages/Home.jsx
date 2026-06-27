@@ -13,10 +13,11 @@ import {
   ChevronUp, 
   Sparkles
 } from 'lucide-react';
+import LeadershipTeam from '../components/LeadershipTeam';
 import './Pages.css';
 
 export default function Home({ setCurrentPage }) {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const [activeFaq, setActiveFaq] = useState(null);
 
   const pillars = [
@@ -162,6 +163,15 @@ export default function Home({ setCurrentPage }) {
           </div>
         </div>
       </section>
+
+      {/* Leadership Team Section */}
+      <LeadershipTeam 
+        badge={locale === 'en' ? 'OUR LEADERSHIP' : 'قيادتنا'}
+        title={locale === 'en' ? 'Leadership Team' : 'فريق القيادة'}
+        subtitle={locale === 'en' 
+          ? 'Meet the professionals driving Novarae Nexus with creativity, innovation, and strategic digital excellence across the UAE.'
+          : 'تعرف على المهنيين الذين يقودون نوفاراي نيكسس بالإبداع والابتكار والتميز الرقمي الاستراتيجي في جميع أنحاء الإمارات.'}
+      />
 
       {/* Services Section */}
       <section className="services-section section-padding bg-surface-wrap">
