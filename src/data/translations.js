@@ -409,7 +409,7 @@ export const translations = {
         message: "Message",
         submit: "Send Proposal",
         sending: "Sending...",
-        success: "Thank you for contacting Novarae Nexus!\n\nYour enquiry has been received successfully. Our team will contact you shortly.",
+        success: "Thank you! Your enquiry has been submitted successfully.",
         error: "We couldn't submit your enquiry at the moment. Please try again in a few minutes or contact us directly via WhatsApp."
       }
     },
@@ -964,7 +964,7 @@ export const translations = {
         message: "تفاصيل الرسالة",
         submit: "أرسل المقترح",
         sending: "جاري الإرسال...",
-        success: "نشكرك على تواصلك مع نوفاراي نيكسس!\n\nتم استلام استفسارك بنجاح. سيتصل بك فريقنا قريباً.",
+        success: "نشكرك! تم تقديم استفسارك بنجاح.",
         error: "لم نتمكن من تقديم استفسارك في الوقت الحالي. يرجى المحاولة مرة أخرى بعد بضع دقائق أو الاتصال بنا مباشرة عبر الواتساب."
       }
     },

@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Send, HelpCircle, CheckCircle, AlertCircle } from 
 import { submitEnquiry } from '../utils/api';
 import './Pages.css';
 
-export default function Contact() {
+export default function Contact({ setCurrentPage }) {
   const { locale, t } = useLanguage();
   const [formState, setFormState] = useState({
     name: '',
@@ -19,6 +19,7 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+  const [apiErrorMessage, setApiErrorMessage] = useState('');
 
   const servicesList = [
     { id: 'digital-marketing', name: t('services.items.digital-marketing.title') },
@@ -41,10 +42,11 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
+    setApiErrorMessage('');
     try {
       await submitEnquiry({
         ...formState,
-        source: 'General Contact Form'
+        source: 'Official Website'
       });
       setStatus('success');
       setFormState({
@@ -59,9 +61,15 @@ export default function Contact() {
         service: '',
         message: ''
       });
-      setTimeout(() => setStatus('idle'), 10000);
+      setTimeout(() => {
+        setStatus('idle');
+        if (setCurrentPage) {
+          setCurrentPage('thank-you');
+        }
+      }, 1500);
     } catch (err) {
       console.error('[Contact Form Error]:', err);
+      setApiErrorMessage(err.message || 'An error occurred during submission.');
       setStatus('error');
     }
   };
@@ -282,7 +290,7 @@ export default function Contact() {
               {status === 'error' && (
                 <div className="form-error-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', borderColor: '#ef4444', color: '#fca5a5' }}>
                   <AlertCircle size={20} color="#ef4444" />
-                  <p style={{ margin: 0 }}>{t('contact.form.error')}</p>
+                  <p style={{ margin: 0 }}>{apiErrorMessage || t('contact.form.error')}</p>
                 </div>
               )}
             </div>

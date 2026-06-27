@@ -97,8 +97,8 @@ export default async function handler(req, res) {
     };
 
     // Store API configuration using Vercel Environment Variables
-    const crmApiUrl = process.env.CRM_API_URL || 'https://api.novaraenexus-crm.com/v1/enquiries';
-    const crmApiKey = process.env.CRM_API_KEY || 'default-mock-key-for-local-dev';
+    const crmApiUrl = process.env.CRM_API_URL || 'https://novaraenexus-invoice-web.vercel.app/api/enquiry';
+    const crmApiKey = process.env.CRM_API_KEY || 'nexus_enquiry_sec_key_2026_xyz';
 
     console.log(`[CRM Sync] Synchronizing enquiry for ${sanitizedData.emailAddress} [IP: ${clientIp}]`);
 
@@ -108,28 +108,47 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${crmApiKey}`,
-          'X-Client-IP': clientIp
+          'Authorization': `Bearer ${crmApiKey}`
         },
-        body: JSON.stringify(sanitizedData)
+        body: JSON.stringify({
+          name: sanitizedData.fullName,
+          company: sanitizedData.companyName,
+          email: sanitizedData.emailAddress,
+          phone: sanitizedData.phoneNumber,
+          whatsapp: sanitizedData.whatsappNumber,
+          businessType: sanitizedData.businessType,
+          serviceInterested: sanitizedData.serviceInterestedIn,
+          budget: sanitizedData.budget,
+          preferredContact: sanitizedData.preferredContactMethod,
+          message: sanitizedData.message,
+          source: sanitizedData.source || 'Official Website'
+        })
       });
 
-      if (!response.ok) {
-        const errorResponse = await response.text();
-        console.warn(`[CRM Sync Warning] CRM API status ${response.status}:`, errorResponse);
-        console.log('[CRM Sync Fallback] Saving enquiry data to serverless fallback logs:', JSON.stringify(sanitizedData));
-      } else {
-        console.log(`[CRM Sync Success] Enquiry for ${sanitizedData.emailAddress} synced successfully.`);
-      }
-    } catch (fetchError) {
-      console.warn('[CRM Sync Warning] CRM API connection failed (using fallback logging):', fetchError.message);
-      console.log('[CRM Sync Fallback] Saving enquiry data to serverless fallback logs:', JSON.stringify(sanitizedData));
-    }
+      const responseText = await response.text();
+      let responseJson = {};
+      try {
+        responseJson = JSON.parse(responseText);
+      } catch (_) {}
 
-    return res.status(200).json({ 
-      success: true, 
-      message: 'Enquiry synchronized successfully.' 
-    });
+      if (!response.ok) {
+        const errorMsg = responseJson.error || responseJson.message || responseText || 'CRM Error';
+        console.error(`[CRM Sync Error] CRM API status ${response.status}:`, responseText);
+        return res.status(response.status).json({ error: errorMsg });
+      }
+
+      console.log(`[CRM Sync Success] Enquiry for ${sanitizedData.emailAddress} synced successfully.`);
+      return res.status(200).json({ 
+        success: true, 
+        message: responseJson.message || 'Enquiry synchronized successfully.' 
+      });
+
+    } catch (fetchError) {
+      console.error('[CRM Sync Exception] CRM API connection failed:', fetchError.message);
+      return res.status(502).json({ 
+        error: `CRM API connection failed: ${fetchError.message}` 
+      });
+    }
 
   } catch (error) {
     console.error('[CRM Sync Exception] Strict validation or serverless error:', error.message);

@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Legal from './pages/Legal';
 import Portal from './pages/Portal';
+import ThankYou from './pages/ThankYou';
 
 import './App.css';
 
@@ -50,7 +51,9 @@ function AppContent() {
       case 'careers':
         return <Careers />;
       case 'contact':
-        return <Contact />;
+        return <Contact setCurrentPage={setCurrentPage} />;
+      case 'thank-you':
+        return <ThankYou setCurrentPage={setCurrentPage} />;
       case 'portal':
         return <Portal />;
       case 'privacy':
