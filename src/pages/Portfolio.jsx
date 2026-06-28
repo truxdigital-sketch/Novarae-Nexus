@@ -74,7 +74,7 @@ export default function Portfolio() {
                 onClick={() => handleOpenCaseStudy(proj)}
               >
                 <div className="portfolio-img-box">
-                  <img src={proj.image} alt={proj.title} className="portfolio-img" />
+                  <img src={proj.image} alt={proj.title} className="portfolio-img" loading="lazy" decoding="async" />
                   <div className="portfolio-hover-overlay">
                     <span className="btn btn-primary btn-view-case">
                       <span>{locale === 'en' ? 'View Case Study' : 'عرض دراسة الحالة'}</span>

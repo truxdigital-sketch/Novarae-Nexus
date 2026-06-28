@@ -249,7 +249,7 @@ export default function Home({ setCurrentPage }) {
             {t('portfolio.items').slice(0, 3).map((item, index) => (
               <div key={index} className="portfolio-teaser-card glass-panel glass-panel-interactive">
                 <div className="portfolio-image-wrapper">
-                  <img src={item.image} alt={item.title} className="portfolio-image" />
+                  <img src={item.image} alt={item.title} className="portfolio-image" loading="lazy" decoding="async" />
                 </div>
                 <div className="portfolio-info">
                   <span className="portfolio-client">{item.client}</span>
