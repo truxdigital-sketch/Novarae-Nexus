@@ -9,11 +9,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
-import Industries from './pages/Industries';
 import Pricing from './pages/Pricing';
-import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-import Careers from './pages/Careers';
 import Legal from './pages/Legal';
 import Portal from './pages/Portal';
 import ThankYou from './pages/ThankYou';
@@ -50,14 +47,8 @@ function AppContent() {
         return <Services setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'portfolio':
         return <Portfolio openContactPopup={openContactPopup} />;
-      case 'industries':
-        return <Industries setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'packages':
         return <Pricing setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
-      case 'blog':
-        return <Blog openContactPopup={openContactPopup} />;
-      case 'careers':
-        return <Careers openContactPopup={openContactPopup} />;
       case 'contact':
         return <Contact setCurrentPage={setCurrentPage} />;
       case 'thank-you':

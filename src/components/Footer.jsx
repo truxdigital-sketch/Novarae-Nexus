@@ -46,10 +46,7 @@ export default function Footer({ setCurrentPage, openContactPopup }) {
   const quickLinks = [
     { id: 'about', label: t('nav.about') },
     { id: 'portfolio', label: t('nav.portfolio') },
-    { id: 'industries', label: t('nav.industries') },
-    { id: 'packages', label: t('nav.pricing') },
-    { id: 'blog', label: t('nav.blog') },
-    { id: 'careers', label: t('nav.careers') }
+    { id: 'packages', label: t('nav.pricing') }
   ];
 
   return (
@@ -120,7 +117,7 @@ export default function Footer({ setCurrentPage, openContactPopup }) {
 
         {/* Col 4: Newsletter */}
         <div className="footer-col newsletter-col">
-          <h3>{t('nav.blog')}</h3>
+          <h3>{locale === 'en' ? 'Newsletter' : 'النشرة البريدية'}</h3>
           <p>{t('footer.newsletter')}</p>
           
           <form className="newsletter-form" onSubmit={handleSubscribe}>
