@@ -40,7 +40,7 @@ export async function submitEnquiry(data) {
   if (!payload.message) throw new Error('Message content is required.');
 
   try {
-    const response = await fetch('/api/enquiry', {
+    const response = await fetch('/api/website-enquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

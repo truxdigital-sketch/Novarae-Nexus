@@ -97,7 +97,7 @@ export default async function handler(req, res) {
     };
 
     // Store API configuration using Vercel Environment Variables
-    const crmApiUrl = process.env.CRM_API_URL || 'https://novaraenexus-invoice-web.vercel.app/api/enquiry';
+    const crmApiUrl = process.env.CRM_API_URL || 'https://novaraenexus-invoice-web.vercel.app/api/website-enquiries';
     const crmApiKey = process.env.CRM_API_KEY || 'nexus_enquiry_sec_key_2026_xyz';
 
     console.log(`[CRM Sync] Synchronizing enquiry for ${sanitizedData.emailAddress} [IP: ${clientIp}]`);
