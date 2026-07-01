@@ -9,7 +9,7 @@ export default function LeadershipTeam({ badge, title, subtitle }) {
       name: locale === 'en' ? 'Raees Abdullah' : 'رئيس عبد الله',
       role: locale === 'en' ? 'Founder & CEO' : 'المؤسس والرئيس التنفيذي',
       desc: '',
-      image: '/raees.jpeg'
+      image: '/raees abdullah.jpeg'
     },
     {
       name: locale === 'en' ? 'Dhamin Mudassir A V' : 'ضامن مدثر أ. ف',
@@ -37,7 +37,7 @@ export default function LeadershipTeam({ badge, title, subtitle }) {
           {team.map((member, index) => (
             <div key={index} className="team-card glass-panel glass-panel-interactive">
               <div className="team-member-img-box">
-                <img src={member.image} alt={member.name} className="team-member-img" />
+                <img src={member.image} alt={member.name} className="team-member-img" loading="lazy" decoding="async" />
               </div>
               <h3>{member.name}</h3>
               <span className="team-member-role text-gradient">{member.role}</span>
