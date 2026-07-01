@@ -15,8 +15,8 @@ export default function LeadershipTeam({ badge, title, subtitle }) {
       name: locale === 'en' ? 'Dhamin Mudassir A V' : 'ضامن مدثر أ. ف',
       role: locale === 'en' ? 'Managing Director & Creative Director' : 'العضو المنتدب والمدير الإبداعي',
       desc: locale === 'en'
-        ? 'Digital Marketing Professional with 2+ years of GCC experience, specializing in social media marketing, paid advertising, content strategy, and brand growth. Passionate about delivering creative, data-driven marketing solutions that drive measurable results.'
-        : 'محترف في التسويق الرقمي مع خبرة تزيد عن عامين في الخليج العربي، متخصص في التسويق عبر وسائل التواصل الاجتماعي، والإعلانات المدفوعة، واستراتيجية المحتوى، ونمو العلامة التجارية. شغوف بتقديم حلول تسويقية إبداعية وقائمة على البيانات تحقق نتائج ملموسة.',
+        ? 'Digital Marketing Professional with 2+ years of GCC experience, specializing in social media marketing, paid advertising, content strategy, and brand growth.'
+        : 'محترف في التسويق الرقمي مع خبرة تزيد عن عامين في الخليج العربي، متخصص في التسويق عبر وسائل التواصل الاجتماعي، والإعلانات المدفوعة، واستراتيجية المحتوى، ونمو العلامة التجارية.',
       image: '/dhamin.jpeg'
     }
   ];
