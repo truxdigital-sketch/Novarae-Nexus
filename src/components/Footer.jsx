@@ -47,7 +47,7 @@ export default function Footer({ setCurrentPage, openContactPopup }) {
     { id: 'about', label: t('nav.about') },
     { id: 'portfolio', label: t('nav.portfolio') },
     { id: 'industries', label: t('nav.industries') },
-    { id: 'pricing', label: t('nav.pricing') },
+    { id: 'packages', label: t('nav.pricing') },
     { id: 'blog', label: t('nav.blog') },
     { id: 'careers', label: t('nav.careers') }
   ];

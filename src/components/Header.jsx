@@ -12,7 +12,7 @@ export default function Header({ currentPage, setCurrentPage, openContactPopup }
     { id: 'services', label: t('nav.services') },
     { id: 'portfolio', label: t('nav.portfolio') },
     { id: 'about', label: t('nav.about') },
-    { id: 'pricing', label: t('nav.pricing') },
+    { id: 'packages', label: t('nav.pricing') },
     { id: 'contact', label: t('nav.contact') }
   ];
 

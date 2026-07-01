@@ -52,7 +52,7 @@ function AppContent() {
         return <Portfolio openContactPopup={openContactPopup} />;
       case 'industries':
         return <Industries setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
-      case 'pricing':
+      case 'packages':
         return <Pricing setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'blog':
         return <Blog openContactPopup={openContactPopup} />;

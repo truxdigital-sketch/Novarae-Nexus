@@ -39,10 +39,6 @@ export default function Pricing({ setCurrentPage, openContactPopup }) {
                   )}
                   <h3 className="plan-name">{plan.name}</h3>
                   <p className="plan-desc">{plan.desc}</p>
-                  <div className="plan-price-wrapper">
-                    <span className="plan-price text-gradient">{plan.price}</span>
-                    <span className="plan-period">/ {plan.period === 'Month' ? (locale === 'en' ? 'Month' : 'شهرياً') : plan.period}</span>
-                  </div>
                   <ul className="plan-features">
                     {plan.features.map((feat, idx) => (
                       <li key={idx}>

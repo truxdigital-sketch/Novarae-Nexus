@@ -6,7 +6,7 @@ export const translations = {
       services: "Services",
       portfolio: "Portfolio",
       industries: "Industries",
-      pricing: "Pricing",
+      pricing: "Packages",
       blog: "Blog",
       contact: "Contact",
       careers: "Careers",
@@ -414,14 +414,12 @@ export const translations = {
       }
     },
     pricing: {
-      badge: "Pricing Plans",
+      badge: "Packages",
       title: "Social Media Retainers",
       subtitle: "Transparent packages designed for maximum engagement and brand growth in the UAE.",
       plans: {
         basic: {
           name: "Basic Package",
-          price: "AED 1,999",
-          period: "Month",
           desc: "Ideal for startups and small businesses looking to establish a professional online presence.",
           features: [
             "8 Professional Social Media Posts",
@@ -432,12 +430,10 @@ export const translations = {
             "Professional Captions & Hashtag Research",
             "Content Publishing & Scheduling"
           ],
-          cta: "Get Started"
+          cta: "Get a Quote"
         },
         growth: {
           name: "Growth Package",
-          price: "AED 3,499",
-          period: "Month",
           desc: "Designed for growing businesses that need consistent content and stronger audience engagement.",
           features: [
             "12 Professional Social Media Posts",
@@ -451,12 +447,10 @@ export const translations = {
             "Professional Captions & Hashtag Research",
             "Content Publishing & Scheduling"
           ],
-          cta: "Choose Growth"
+          cta: "Request Pricing"
         },
         elite: {
           name: "Elite Package",
-          price: "AED 5,199",
-          period: "Month",
           desc: "A complete digital marketing solution for businesses that want maximum online growth and brand authority.",
           features: [
             "16 Professional Social Media Posts",
@@ -472,13 +466,13 @@ export const translations = {
             "Professional Captions & Hashtag Research",
             "Content Publishing & Scheduling"
           ],
-          cta: "Contact Sales"
+          cta: "Let's Talk"
         }
       },
       custom: {
         title: "Need a Custom Marketing Plan?",
-        desc: "Every business is unique. We create customized digital marketing packages based on your industry, business goals, content requirements, advertising budget, and growth objectives.",
-        cta: "Request a Custom Quote"
+        desc: "Custom packages are available based on your business goals and requirements. Contact us today for a personalized quotation.",
+        cta: "Contact Us"
       }
     },
     careers: {
@@ -561,7 +555,7 @@ export const translations = {
       services: "خدماتنا",
       portfolio: "أعمالنا",
       industries: "القطاعات",
-      pricing: "الأسعار",
+      pricing: "الباقات",
       blog: "المدونة",
       contact: "اتصل بنا",
       careers: "الوظائف",
