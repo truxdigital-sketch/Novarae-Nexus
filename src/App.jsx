@@ -17,12 +17,20 @@ import Careers from './pages/Careers';
 import Legal from './pages/Legal';
 import Portal from './pages/Portal';
 import ThankYou from './pages/ThankYou';
+import PopupContactForm from './components/PopupContactForm';
 
 import './App.css';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState('home');
   const [globalLoading, setGlobalLoading] = useState(true);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupService, setPopupService] = useState('');
+
+  const openContactPopup = (serviceId = '') => {
+    setPopupService(serviceId);
+    setIsPopupOpen(true);
+  };
 
   // App boot loading screen transition
   useEffect(() => {
@@ -35,21 +43,21 @@ function AppContent() {
   const renderActivePage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'about':
-        return <About />;
+        return <About openContactPopup={openContactPopup} />;
       case 'services':
-        return <Services setCurrentPage={setCurrentPage} />;
+        return <Services setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'portfolio':
-        return <Portfolio />;
+        return <Portfolio openContactPopup={openContactPopup} />;
       case 'industries':
-        return <Industries setCurrentPage={setCurrentPage} />;
+        return <Industries setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'pricing':
-        return <Pricing setCurrentPage={setCurrentPage} />;
+        return <Pricing setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
       case 'blog':
-        return <Blog />;
+        return <Blog openContactPopup={openContactPopup} />;
       case 'careers':
-        return <Careers />;
+        return <Careers openContactPopup={openContactPopup} />;
       case 'contact':
         return <Contact setCurrentPage={setCurrentPage} />;
       case 'thank-you':
@@ -61,7 +69,7 @@ function AppContent() {
       case 'terms':
         return <Legal documentType="terms" />;
       default:
-        return <Home setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />;
     }
   };
 
@@ -86,7 +94,7 @@ function AppContent() {
 
       {/* Hide standard Header inside Client Portal */}
       {!isPortal && (
-        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />
       )}
 
       {/* Primary viewport content */}
@@ -96,11 +104,18 @@ function AppContent() {
 
       {/* Hide standard Footer inside Client Portal */}
       {!isPortal && (
-        <Footer setCurrentPage={setCurrentPage} />
+        <Footer setCurrentPage={setCurrentPage} openContactPopup={openContactPopup} />
       )}
 
       {/* Floating contact widget */}
       <FloatingWhatsApp />
+
+      {/* Reusable Popup Contact Form Modal */}
+      <PopupContactForm 
+        isOpen={isPopupOpen} 
+        onClose={() => setIsPopupOpen(false)} 
+        initialService={popupService} 
+      />
     </div>
   );
 }

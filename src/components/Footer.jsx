@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { submitEnquiry } from '../utils/api';
 import './Footer.css';
 
-export default function Footer({ setCurrentPage }) {
+export default function Footer({ setCurrentPage, openContactPopup }) {
   const { locale, t } = useLanguage();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -13,12 +14,23 @@ export default function Footer({ setCurrentPage }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email) {
-      setSubmitted(true);
-      setEmail('');
-      setTimeout(() => setSubmitted(false), 5000);
+      try {
+        await submitEnquiry({
+          name: 'Newsletter Subscriber',
+          email: email,
+          phone: '-',
+          message: 'Subscribed to Newsletter from Footer',
+          source: 'Official Website'
+        });
+        setSubmitted(true);
+        setEmail('');
+        setTimeout(() => setSubmitted(false), 5000);
+      } catch (err) {
+        console.error('[Footer Newsletter Sync Error]:', err);
+      }
     }
   };
 

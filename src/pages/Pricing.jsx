@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Check, Sparkles, HelpCircle } from 'lucide-react';
 import './Pages.css';
 
-export default function Pricing({ setCurrentPage }) {
+export default function Pricing({ setCurrentPage, openContactPopup }) {
   const { locale, t } = useLanguage();
 
   const plansKeys = ['basic', 'growth', 'elite'];
@@ -52,7 +52,13 @@ export default function Pricing({ setCurrentPage }) {
                     ))}
                   </ul>
                   <button 
-                    onClick={() => setCurrentPage('contact')} 
+                    onClick={() => {
+                      if (openContactPopup) {
+                        openContactPopup('other');
+                      } else {
+                        setCurrentPage('contact');
+                      }
+                    }} 
                     className={`btn w-100 ${isFeatured ? 'btn-primary' : 'btn-secondary'}`}
                   >
                     <span>{plan.cta}</span>
@@ -69,7 +75,16 @@ export default function Pricing({ setCurrentPage }) {
               <h3>{t('pricing.custom.title')}</h3>
               <p>{t('pricing.custom.desc')}</p>
             </div>
-            <button onClick={() => setCurrentPage('contact')} className="btn btn-outline-gold">
+            <button 
+              onClick={() => {
+                if (openContactPopup) {
+                  openContactPopup('other');
+                } else {
+                  setCurrentPage('contact');
+                }
+              }} 
+              className="btn btn-outline-gold"
+            >
               <span>{t('pricing.custom.cta')}</span>
             </button>
           </div>

@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Menu, X, Globe, PhoneCall } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ currentPage, setCurrentPage }) {
+export default function Header({ currentPage, setCurrentPage, openContactPopup }) {
   const { locale, toggleLocale, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -57,7 +57,9 @@ export default function Header({ currentPage, setCurrentPage }) {
 
           {/* Consultation CTA */}
           <button 
-            onClick={() => handleNavClick('contact')} 
+            onClick={() => {
+              if (openContactPopup) openContactPopup();
+            }} 
             className="btn btn-primary btn-consult"
           >
             <PhoneCall size={14} />
@@ -104,7 +106,10 @@ export default function Header({ currentPage, setCurrentPage }) {
               </button>
               
               <button 
-                onClick={() => handleNavClick('contact')} 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (openContactPopup) openContactPopup();
+                }} 
                 className="btn btn-primary mobile-btn"
               >
                 <PhoneCall size={16} />

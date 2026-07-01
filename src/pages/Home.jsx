@@ -21,9 +21,10 @@ import {
   Video
 } from 'lucide-react';
 import LeadershipTeam from '../components/LeadershipTeam';
+import ContactForm from '../components/ContactForm';
 import './Pages.css';
 
-export default function Home({ setCurrentPage }) {
+export default function Home({ setCurrentPage, openContactPopup }) {
   const { locale, t } = useLanguage();
   const [activeFaq, setActiveFaq] = useState(null);
 
@@ -82,7 +83,9 @@ export default function Home({ setCurrentPage }) {
             <p className="hero-subtitle">{t('hero.subtitle')}</p>
             <div className="hero-actions">
               <button 
-                onClick={() => setCurrentPage('contact')} 
+                onClick={() => {
+                  if (openContactPopup) openContactPopup();
+                }} 
                 className="btn btn-primary"
               >
                 <Calendar size={16} />
@@ -303,13 +306,45 @@ export default function Home({ setCurrentPage }) {
         </div>
       </section>
 
+      {/* Home Contact Form Section */}
+      <section className="home-contact-section section-padding">
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <div className="section-title-wrapper">
+            <span className="badge">{t('nav.contact')}</span>
+            <h2 className="section-title">{locale === 'en' ? 'Get a Free Consultation' : 'احصل على استشارة مجانية'}</h2>
+            <p className="section-subtitle">
+              {locale === 'en' 
+                ? 'Fill in the form below and our team will get back to you with a tailored growth strategy.' 
+                : 'املاً النموذج أدناه وسيتواصل معك فريقنا بخطة نمو مخصصة.'}
+            </p>
+          </div>
+          <div className="home-contact-card glass-panel" style={{ padding: '3rem' }}>
+            <ContactForm 
+              source="Home Page Contact Form" 
+              onSuccess={() => {
+                setTimeout(() => {
+                  if (setCurrentPage) {
+                    setCurrentPage('thank-you');
+                  }
+                }, 1500);
+              }} 
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="final-cta-section section-padding">
         <div className="container cta-container glass-panel">
           <h2>{t('cta.title')}</h2>
           <p>{t('cta.subtitle')}</p>
           <div className="cta-actions">
-            <button onClick={() => setCurrentPage('contact')} className="btn btn-primary">
+            <button 
+              onClick={() => {
+                if (openContactPopup) openContactPopup();
+              }} 
+              className="btn btn-primary"
+            >
               <Calendar size={16} />
               <span>{t('cta.primary')}</span>
             </button>

@@ -34,6 +34,7 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
   const [activeServiceId, setActiveServiceId] = useState(initialServiceId);
   const [miniForm, setMiniForm] = useState({ name: '', email: '', phone: '' });
   const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+  const [apiErrorMessage, setApiErrorMessage] = useState('');
 
   // Sync state if initialServiceId changes
   useEffect(() => {
@@ -76,6 +77,7 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
   const handleMiniSubmit = async (e) => {
     e.preventDefault();
     setSubmitStatus('sending');
+    setApiErrorMessage('');
     try {
       await submitEnquiry({
         name: miniForm.name,
@@ -83,13 +85,14 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
         phone: miniForm.phone,
         service: activeServiceId,
         message: `Requesting a 1-on-1 strategy audit for the service: ${activeServiceId}.`,
-        source: 'Service Detail Mini-Form'
+        source: 'Official Website'
       });
       setSubmitStatus('success');
       setMiniForm({ name: '', email: '', phone: '' });
       setTimeout(() => setSubmitStatus('idle'), 8000);
     } catch (err) {
-      console.error('[Services Mini-Form Error]:', err);
+      console.error('[Services Mini-Form Error Details]:', err);
+      setApiErrorMessage(err.message || 'Submission failed. Please verify your entries.');
       setSubmitStatus('error');
     }
   };
@@ -207,7 +210,7 @@ export default function Services({ initialServiceId = null, setCurrentPage }) {
                   {submitStatus === 'error' && (
                     <div className="form-error-alert glass-panel mt-3" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', borderColor: '#ef4444', color: '#fca5a5', fontSize: '0.85rem', padding: '1rem' }}>
                       <AlertCircle size={18} color="#ef4444" style={{ flexShrink: 0 }} />
-                      <p style={{ margin: 0 }}>{t('contact.form.error')}</p>
+                      <p style={{ margin: 0 }}>{apiErrorMessage}</p>
                     </div>
                   )}
                 </div>
