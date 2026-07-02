@@ -157,6 +157,7 @@ body {
   gap: 0.5rem;
   border: none;
   font-family: inherit;
+  white-space: nowrap;
 }
 
 .btn-primary {
