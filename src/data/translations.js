@@ -430,7 +430,7 @@ export const translations = {
             "Professional Captions & Hashtag Research",
             "Content Publishing & Scheduling"
           ],
-          cta: "Get a Quote"
+          cta: "Request Pricing"
         },
         growth: {
           name: "Growth Package",
@@ -466,7 +466,7 @@ export const translations = {
             "Professional Captions & Hashtag Research",
             "Content Publishing & Scheduling"
           ],
-          cta: "Let's Talk"
+          cta: "Request Pricing"
         }
       },
       custom: {
@@ -981,7 +981,7 @@ export const translations = {
             "كتابة نصوص احترافية والبحث عن الهاشتاجات",
             "نشر وتنسيق وجدولة المحتوى"
           ],
-          cta: "ابدأ الآن"
+          cta: "طلب عرض سعر"
         },
         growth: {
           name: "باقة النمو",
@@ -1021,7 +1021,7 @@ export const translations = {
             "كتابة نصوص احترافية والبحث عن الهاشتاجات",
             "نشر وتنسيق وجدولة المحتوى"
           ],
-          cta: "اتصل بالمبيعات"
+          cta: "طلب عرض سعر"
         }
       },
       custom: {
