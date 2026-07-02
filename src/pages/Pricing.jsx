@@ -9,8 +9,7 @@ export default function Pricing({ setCurrentPage, openContactPopup }) {
   const plansKeys = ['basic', 'growth', 'elite'];
 
   const handleWhatsAppRedirect = (packageName) => {
-    const currentUrl = window.location.href;
-    const message = `📦 *Package Selected:* ${packageName}\n\nHello Novarae Nexus,\n\nI am interested in your *${packageName}*.\n\nCan I get more details about this package, including pricing, features, and the next steps?\n\nThank you.\n\nWebsite:\n${currentUrl}`;
+    const message = `📦 *Package Selected:* ${packageName}\n\nHello Novarae Nexus,\n\nI am interested in your *${packageName}*.\n\nCan I get more details about this package, including pricing, features, and the next steps?\n\nThank you.`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/971542713775?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
   };
