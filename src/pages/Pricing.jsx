@@ -8,6 +8,13 @@ export default function Pricing({ setCurrentPage, openContactPopup }) {
 
   const plansKeys = ['basic', 'growth', 'elite'];
 
+  const handleWhatsAppRedirect = (packageName) => {
+    const currentUrl = window.location.href;
+    const message = `📦 *Package Selected:* ${packageName}\n\nHello Novarae Nexus,\n\nI am interested in your *${packageName}*.\n\nCan I get more details about this package, including pricing, features, and the next steps?\n\nThank you.\n\nWebsite:\n${currentUrl}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/971542713775?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="page-wrapper fade-in">
       <div className="ambient-glow" style={{ top: '20%', left: '8%' }}></div>
@@ -48,13 +55,7 @@ export default function Pricing({ setCurrentPage, openContactPopup }) {
                     ))}
                   </ul>
                   <button 
-                    onClick={() => {
-                      if (openContactPopup) {
-                        openContactPopup('other');
-                      } else {
-                        setCurrentPage('contact');
-                      }
-                    }} 
+                    onClick={() => handleWhatsAppRedirect(plan.name)} 
                     className={`btn w-100 ${isFeatured ? 'btn-primary' : 'btn-secondary'}`}
                   >
                     <span>{plan.cta}</span>
@@ -72,13 +73,7 @@ export default function Pricing({ setCurrentPage, openContactPopup }) {
               <p>{t('pricing.custom.desc')}</p>
             </div>
             <button 
-              onClick={() => {
-                if (openContactPopup) {
-                  openContactPopup('other');
-                } else {
-                  setCurrentPage('contact');
-                }
-              }} 
+              onClick={() => handleWhatsAppRedirect(t('pricing.custom.title'))} 
               className="btn btn-outline-gold"
             >
               <span>{t('pricing.custom.cta')}</span>
